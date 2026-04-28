@@ -233,3 +233,8 @@ select,
 button {
   letter-spacing: -0.015em;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
