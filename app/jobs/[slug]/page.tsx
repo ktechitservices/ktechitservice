@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { getActiveJobs, getJobBySlug } from "@/lib/jobs";
+import { getJobBySlug } from "@/lib/jobs";
 import {
   ArrowLeft,
   BriefcaseBusiness,
@@ -11,19 +11,15 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 type JobPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-export async function generateStaticParams() {
-  const jobs = await getActiveJobs();
-
-  return jobs.map((job) => ({
-    slug: job.slug,
-  }));
-}
 
 export async function generateMetadata({ params }: JobPageProps) {
   const { slug } = await params;
