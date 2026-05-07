@@ -18,8 +18,8 @@ export function AudienceToggle() {
 
   const employerPoints = [
     "Submit your hiring requirement",
-    "Ktech reviews and clarifies the role",
-    "Ktech posts the job and searches its database",
+    "KTech reviews and clarifies the role",
+    "KTech posts the job and searches its database",
     "You receive relevant IT candidate shortlists",
   ];
 
@@ -27,7 +27,7 @@ export function AudienceToggle() {
     "Search active IT job postings",
     "Apply directly to a suitable role",
     "Upload your resume if no role matches today",
-    "Stay in Ktech’s database for future opportunities",
+    "Stay in KTech’s database for future opportunities",
   ];
 
   return (
@@ -43,7 +43,7 @@ export function AudienceToggle() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#3D405B]">
-            Ktech works as the bridge between companies looking for IT talent
+            KTech works as the bridge between companies looking for IT talent
             and candidates looking for the right technology opportunity.
           </p>
         </div>
@@ -91,7 +91,7 @@ export function AudienceToggle() {
                 </h3>
 
                 <p className="mt-4 max-w-2xl leading-7 text-[#3D405B]">
-                  Employers share their hiring requirement with Ktech. The Ktech
+                  Employers share their hiring requirement with KTech. The KTech
                   team reviews the need, creates suitable job postings, and
                   matches candidates from applications and its internal talent
                   database.
@@ -142,7 +142,7 @@ export function AudienceToggle() {
 
                 <p className="mt-4 max-w-2xl leading-7 text-[#3D405B]">
                   Candidates can apply to active job postings. If no role
-                  matches today, they can still upload their resume so Ktech can
+                  matches today, they can still upload their resume so KTech can
                   keep them in the database and contact them for future roles.
                 </p>
 

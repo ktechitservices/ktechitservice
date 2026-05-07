@@ -13,7 +13,7 @@ export function Footer() {
               </div>
 
               <div>
-                <p className="text-lg font-black leading-none">Ktech</p>
+                <p className="text-lg font-black leading-none">KTech</p>
                 <p className="text-xs font-medium text-[#F4F1DE]/70">
                   IT Services
                 </p>
@@ -94,7 +94,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-[#F4F1DE]/15 pt-6 text-xs text-[#F4F1DE]/60 md:flex-row">
-          <p>© 2026 Ktech IT Services. All rights reserved.</p>
+          <p>© 2026 KTech IT Services. All rights reserved.</p>
 
           <div className="flex gap-5">
             <a href="/privacy" className="hover:text-white">

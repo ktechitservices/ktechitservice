@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Ktech IT Services, a Delaware-based IT staffing and services company built for better talent matching.",
+    "Learn about KTech IT Services, a Delaware-based IT staffing and services company built for better talent matching.",
 };
 
 const focusAreas = [
@@ -77,7 +77,7 @@ export default function AboutPage() {
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
               <Building2 size={16} />
-              About Ktech IT Services
+              About KTech IT Services
             </div>
 
             <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
@@ -85,7 +85,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Ktech IT Services connects companies with skilled technology
+              KTech IT Services connects companies with skilled technology
               professionals while helping candidates discover roles that match
               their skills, experience, and career direction.
             </p>
@@ -168,14 +168,14 @@ export default function AboutPage() {
               </p>
 
               <p>
-                Ktech IT Services is designed to make that process more focused.
-                Employers share their hiring requirements with Ktech, and Ktech
+                KTech IT Services is designed to make that process more focused.
+                Employers share their hiring requirements with KTech, and KTech
                 reviews, posts, sources, and shortlists suitable candidates.
               </p>
 
               <p>
                 Candidates can apply to active roles or upload their resume even
-                when no job matches today. This helps Ktech build a useful
+                when no job matches today. This helps KTech build a useful
                 candidate database for future client and internal opportunities.
               </p>
             </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
-              Ktech combines employer hiring support, job posting, candidate
+              KTech combines employer hiring support, job posting, candidate
               profile collection, and technology-focused talent matching.
             </p>
           </div>
@@ -240,7 +240,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#F4F1DE]/80">
-              Ktech aims to reduce hiring friction by helping employers access
+              KTech aims to reduce hiring friction by helping employers access
               relevant technology professionals and helping candidates get
               discovered for roles that match their profile.
             </p>
@@ -256,7 +256,7 @@ export default function AboutPage() {
             </h3>
 
             <p className="mt-5 text-sm leading-7 text-white/85">
-              Ktech focuses on clarity, quality, and speed so employers and
+              KTech focuses on clarity, quality, and speed so employers and
               candidates both get a smoother staffing experience.
             </p>
           </div>
@@ -272,11 +272,11 @@ export default function AboutPage() {
             </p>
 
             <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              What Ktech stands for.
+              What KTech stands for.
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech is built around speed, relevance, and trust. The experience
+              KTech is built around speed, relevance, and trust. The experience
               should feel simple for candidates and valuable for employers.
             </p>
           </div>
@@ -311,7 +311,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-                As Ktech grows, this section can display team photos,
+                As KTech grows, this section can display team photos,
                 certifications, client testimonials, awards, and verified trust
                 badges.
               </p>
@@ -343,17 +343,17 @@ export default function AboutPage() {
       <section className="px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-[2rem] bg-[#1B3D2F] p-8 text-center text-[#F4F1DE] shadow-xl md:p-12">
           <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-            Work with Ktech
+            Work with KTech
           </p>
 
           <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
-            Whether you are hiring or job searching, Ktech helps you move
+            Whether you are hiring or job searching, KTech helps you move
             forward.
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#F4F1DE]/80">
             Employers can submit hiring requirements. Candidates can search jobs
-            or upload resumes to join Ktech’s talent database.
+            or upload resumes to join KTech’s talent database.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

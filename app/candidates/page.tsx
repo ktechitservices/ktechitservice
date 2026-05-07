@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Find IT Jobs",
   description:
-    "Search active IT roles or upload your resume to join Ktech’s candidate database for future opportunities.",
+    "Search active IT roles or upload your resume to join KTech’s candidate database for future opportunities.",
 };
 
 const specialisations = [
@@ -48,7 +48,7 @@ const specialisations = [
 const benefits = [
   "Search active IT roles",
   "Upload your resume even if no job matches today",
-  "Join Ktech’s candidate database",
+  "Join KTech’s candidate database",
   "Get considered for client and internal roles",
   "Remote, hybrid, and on-site role options",
   "Software, cloud, data, and cybersecurity opportunities",
@@ -59,19 +59,19 @@ const steps = [
     icon: Search,
     title: "Search Jobs",
     description:
-      "Browse active IT opportunities posted by Ktech for client and internal hiring needs.",
+      "Browse active IT opportunities posted by KTech for client and internal hiring needs.",
   },
   {
     icon: UploadCloud,
     title: "Upload Profile",
     description:
-      "Share your skills, experience, preferred role, and resume with Ktech.",
+      "Share your skills, experience, preferred role, and resume with KTech.",
   },
   {
     icon: Users,
     title: "Get Matched",
     description:
-      "Ktech reviews your profile and matches you with suitable employer requirements.",
+      "KTech reviews your profile and matches you with suitable employer requirements.",
   },
   {
     icon: BriefcaseBusiness,
@@ -104,7 +104,7 @@ export default function CandidatesPage() {
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
               Search active roles, apply to suitable jobs, or upload your resume
-              so Ktech can keep you in its candidate database for future
+              so KTech can keep you in its candidate database for future
               opportunities.
             </p>
 
@@ -146,7 +146,7 @@ export default function CandidatesPage() {
                   {[
                     "Apply to active roles",
                     "Upload resume for future matching",
-                    "Join Ktech’s candidate database",
+                    "Join KTech’s candidate database",
                     "Get contacted for relevant IT jobs",
                   ].map((item) => (
                     <div
@@ -229,7 +229,7 @@ export default function CandidatesPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech supports candidates across software, cloud, data,
+              KTech supports candidates across software, cloud, data,
               cybersecurity, DevOps, and digital delivery roles.
             </p>
           </div>
@@ -266,7 +266,7 @@ export default function CandidatesPage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Why join Ktech?
+              Why join KTech?
             </p>
 
             <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
@@ -274,7 +274,7 @@ export default function CandidatesPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech helps candidates become visible for technology roles that
+              KTech helps candidates become visible for technology roles that
               match their skills, experience, work preference, and career goals.
             </p>
           </div>
@@ -308,7 +308,7 @@ export default function CandidatesPage() {
             </h2>
 
             <p className="mx-auto mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech makes the candidate journey simple, structured, and focused
+              KTech makes the candidate journey simple, structured, and focused
               on matching you with relevant IT roles.
             </p>
           </div>
@@ -359,7 +359,7 @@ export default function CandidatesPage() {
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
               Fill out your profile and upload your resume. For now, the form
               opens an email draft. Later, this will connect to Supabase Storage
-              and the Ktech candidate database.
+              and the KTech candidate database.
             </p>
 
             <div className="mt-8 rounded-[2rem] bg-[#1B3D2F] p-6 text-[#F4F1DE] shadow-xl">
@@ -367,7 +367,7 @@ export default function CandidatesPage() {
 
               <div className="mt-5 space-y-4">
                 {[
-                  "Ktech reviews your candidate profile.",
+                  "KTech reviews your candidate profile.",
                   "Your resume is added to the talent database.",
                   "You are matched with relevant active or future roles.",
                 ].map((item) => (

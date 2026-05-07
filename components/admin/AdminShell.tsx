@@ -47,7 +47,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             </div>
 
             <div>
-              <p className="text-lg font-black leading-none">Ktech Admin</p>
+              <p className="text-lg font-black leading-none">KTech Admin</p>
               <p className="text-xs font-medium text-[#F4F1DE]/65">
                 Internal dashboard
               </p>
@@ -75,7 +75,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             <p className="text-sm font-black text-[#E07A5F]">Admin Access</p>
             <p className="mt-2 text-xs leading-6 text-[#F4F1DE]/70">
               This area will later be protected using Supabase Auth so only
-              Ktech staff can manage jobs and candidate records.
+              KTech staff can manage jobs and candidate records.
             </p>
           </div>
 
@@ -93,7 +93,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             <div className="mx-auto flex max-w-7xl items-center justify-between">
               <div>
                 <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#E07A5F]">
-                  Ktech Internal
+                  KTech Internal
                 </p>
                 <h1 className="text-2xl font-black text-[#1B3D2F]">
                   Admin Dashboard

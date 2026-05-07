@@ -123,7 +123,7 @@ export async function submitCandidateProfile(
     return {
       success: true,
       message:
-        "Your profile has been submitted. Ktech will review it for suitable IT opportunities.",
+        "Your profile has been submitted. KTech will review it for suitable IT opportunities.",
     };
   } catch (error) {
     console.error("Candidate action error:", error);

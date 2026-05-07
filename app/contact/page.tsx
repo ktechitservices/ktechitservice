@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Ktech IT Services for employer hiring needs, candidate submissions, IT services, or business enquiries.",
+    "Contact KTech IT Services for employer hiring needs, candidate submissions, IT services, or business enquiries.",
 };
 
 const contactCards = [
@@ -37,7 +37,7 @@ const contactCards = [
     icon: Clock,
     title: "Response",
     value: "Fast follow-up",
-    description: "Ktech reviews enquiries and routes them to the right pathway.",
+    description: "KTech reviews enquiries and routes them to the right pathway.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function ContactPage() {
           <div className="max-w-4xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
               <Building2 size={16} />
-              Contact Ktech IT Services
+              Contact KTech IT Services
             </div>
 
             <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
@@ -70,7 +70,7 @@ export default function ContactPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Reach out to Ktech for employer hiring needs, candidate resume
+              Reach out to KTech for employer hiring needs, candidate resume
               submissions, IT services enquiries, or partnership conversations.
             </p>
 
@@ -133,12 +133,12 @@ export default function ContactPage() {
             </p>
 
             <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Connect with the right Ktech pathway.
+              Connect with the right KTech pathway.
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
               Choose the enquiry type that best matches your need. This helps
-              Ktech route your message between employer hiring, candidate
+              KTech route your message between employer hiring, candidate
               support, IT services, and general business enquiries.
             </p>
 
@@ -209,7 +209,7 @@ export default function ContactPage() {
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#F4F1DE]/80">
               Employer enquiries, candidate submissions, and IT services
-              requests should not sit unnoticed. Ktech’s contact flow is
+              requests should not sit unnoticed. KTech’s contact flow is
               designed to route each message to the right next step.
             </p>
           </div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
               href="mailto:hello@ktechitservices.com"
               className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#E07A5F]"
             >
-              Email Ktech <ArrowRight size={16} />
+              Email KTech <ArrowRight size={16} />
             </a>
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function ContactPage() {
       <section className="px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-[2rem] bg-[#1B3D2F] p-8 text-center text-[#F4F1DE] shadow-xl md:p-12">
           <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-            Ktech IT Services
+            KTech IT Services
           </p>
 
           <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
@@ -248,7 +248,7 @@ export default function ContactPage() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#F4F1DE]/80">
-            Whether you are building a team or building your career, Ktech helps
+            Whether you are building a team or building your career, KTech helps
             connect businesses and IT professionals through a modern
             staffing-focused platform.
           </p>

@@ -60,7 +60,7 @@ export default async function AdminLeadsPage() {
 
         <p className="mt-3 max-w-2xl text-sm font-semibold leading-7 text-[#3D405B]">
           Employer hiring requirements submitted through the website appear here
-          for the Ktech team to review, contact, and convert into job postings.
+          for the KTech team to review, contact, and convert into job postings.
         </p>
       </div>
 
@@ -188,9 +188,9 @@ export default async function AdminLeadsPage() {
         <div className="mt-5 space-y-4">
           {[
             "Employer submits a short hiring requirement form.",
-            "Ktech reviews the company, role, skills, and urgency.",
-            "Ktech contacts the employer to clarify the requirement.",
-            "Once approved, Ktech creates a client job posting from admin.",
+            "KTech reviews the company, role, skills, and urgency.",
+            "KTech contacts the employer to clarify the requirement.",
+            "Once approved, KTech creates a client job posting from admin.",
           ].map((item) => (
             <div key={item} className="flex gap-3">
               <CheckCircle2 className="mt-0.5 shrink-0 text-[#E07A5F]" />

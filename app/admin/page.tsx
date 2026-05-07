@@ -33,10 +33,10 @@ const stats = [
 
 const workflows = [
   "Employer submits hiring requirement",
-  "Ktech reviews the role and confirms details",
-  "Ktech posts the job from admin dashboard",
+  "KTech reviews the role and confirms details",
+  "KTech posts the job from admin dashboard",
   "Candidates apply or upload resumes",
-  "Ktech shortlists and matches candidates",
+  "KTech shortlists and matches candidates",
 ];
 
 export default function AdminDashboardPage() {
@@ -74,7 +74,7 @@ export default function AdminDashboardPage() {
           </p>
 
           <h2 className="mt-3 text-3xl font-black text-[#1B3D2F]">
-            How Ktech manages hiring.
+            How KTech manages hiring.
           </h2>
 
           <div className="mt-6 space-y-4">
@@ -98,7 +98,7 @@ export default function AdminDashboardPage() {
 
           <p className="mt-4 text-sm leading-7 text-[#F4F1DE]/80">
             This dashboard is currently frontend-only. Next, we connect
-            Supabase Auth, database tables, and resume storage so Ktech staff can
+            Supabase Auth, database tables, and resume storage so KTech staff can
             securely manage jobs, candidates, employer leads, and applications.
           </p>
         </section>

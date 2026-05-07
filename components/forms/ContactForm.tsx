@@ -32,7 +32,7 @@ export function ContactForm() {
     event.preventDefault();
 
     const subject = encodeURIComponent(
-      `Ktech Website Enquiry - ${formData.enquiryType || "General"}`
+      `KTech Website Enquiry - ${formData.enquiryType || "General"}`
     );
 
     const body = encodeURIComponent(`
@@ -62,12 +62,12 @@ Note: This contact form currently opens an email draft. In the backend stage, th
         </p>
 
         <h2 className="mt-3 text-3xl font-black tracking-tight text-[#1B3D2F]">
-          Send Ktech a message.
+          Send KTech a message.
         </h2>
 
         <p className="mt-3 text-sm leading-6 text-[#3D405B]">
           Choose the right enquiry type so your message can be routed to the
-          correct Ktech pathway.
+          correct KTech pathway.
         </p>
       </div>
 
@@ -163,7 +163,7 @@ Note: This contact form currently opens an email draft. In the backend stage, th
           onChange={updateField}
           required
           rows={6}
-          placeholder="Tell us how Ktech can help..."
+          placeholder="Tell us how KTech can help..."
           className="w-full resize-none rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
         />
       </div>

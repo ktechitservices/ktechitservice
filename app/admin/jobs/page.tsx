@@ -73,7 +73,7 @@ export default async function AdminJobsPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-sm font-semibold leading-7 text-[#3D405B]">
-            Create, review, and manage Ktech client jobs and internal hiring
+            Create, review, and manage KTech client jobs and internal hiring
             roles. Active jobs appear on the public job portal.
           </p>
         </div>

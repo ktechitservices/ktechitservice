@@ -113,7 +113,7 @@ export function CandidateApplicationForm() {
         </h2>
 
         <p className="mt-3 text-sm leading-6 text-[#3D405B]">
-          Share your details and join Ktech’s IT talent database for current and
+          Share your details and join KTech’s IT talent database for current and
           future opportunities.
         </p>
       </div>

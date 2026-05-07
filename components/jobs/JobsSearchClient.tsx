@@ -215,7 +215,7 @@ export function JobsSearchClient({ jobs }: JobsSearchClientProps) {
             </h2>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Apply to current roles or join the Ktech candidate database for
+              Apply to current roles or join the KTech candidate database for
               future matching.
             </p>
           </div>
@@ -234,7 +234,7 @@ export function JobsSearchClient({ jobs }: JobsSearchClientProps) {
             <h3 className="text-3xl font-black">No matching jobs found.</h3>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#F4F1DE]/80">
-              Try changing your filters, or upload your resume so Ktech can keep
+              Try changing your filters, or upload your resume so KTech can keep
               your profile in its candidate database for future IT roles.
             </p>
 

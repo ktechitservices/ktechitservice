@@ -34,7 +34,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-            Ktech helps companies hire skilled IT professionals faster while
+            KTech helps companies hire skilled IT professionals faster while
             connecting candidates with technology roles that match their real
             skills.
           </p>
@@ -64,7 +64,7 @@ export function Hero() {
             <div className="flex gap-3">
               <CheckCircle2 className="mt-0.5 shrink-0 text-[#1B3D2F]" />
               <p className="text-sm leading-6 text-[#3D405B]">
-                Employers submit hiring needs. Ktech reviews, posts active
+                Employers submit hiring needs. KTech reviews, posts active
                 roles, and matches candidates from applications and its talent
                 database.
               </p>
@@ -83,7 +83,7 @@ export function Hero() {
           <div className="relative overflow-hidden rounded-[2rem] border border-[#1B3D2F]/10 bg-white p-4 shadow-xl">
             <div className="rounded-[1.5rem] bg-[#1B3D2F] p-6 text-[#F4F1DE]">
               <p className="text-sm font-medium text-[#F4F1DE]/75">
-                Ktech Talent Workflow
+                KTech Talent Workflow
               </p>
 
               <h2 className="mt-2 text-3xl font-black leading-tight">

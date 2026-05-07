@@ -14,16 +14,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "Read the website terms for candidates, employers, and visitors using Ktech IT Services.",
+    "Read the website terms for candidates, employers, and visitors using KTech IT Services.",
 };
 
 const terms = [
   {
     title: "Use of the Website",
     points: [
-      "The Ktech website is provided for employers, candidates, and business visitors seeking IT staffing and services information.",
+      "The KTech website is provided for employers, candidates, and business visitors seeking IT staffing and services information.",
       "Users agree not to misuse the website, submit false information, attempt unauthorised access, or interfere with website functionality.",
-      "Ktech may update website content, job listings, forms, pages, and features at any time.",
+      "KTech may update website content, job listings, forms, pages, and features at any time.",
     ],
   },
   {
@@ -31,31 +31,31 @@ const terms = [
     points: [
       "Candidates may submit profile details, resumes, and application information through the website.",
       "Submitting a resume does not guarantee job placement, interview selection, or employment.",
-      "Ktech may review candidate information for current or future IT opportunities.",
+      "KTech may review candidate information for current or future IT opportunities.",
       "Candidates are responsible for ensuring that submitted information is accurate and up to date.",
     ],
   },
   {
     title: "Employer Enquiries",
     points: [
-      "Employers may submit hiring requirements through Ktech’s website forms.",
+      "Employers may submit hiring requirements through KTech’s website forms.",
       "Submitting a hiring enquiry does not create a binding staffing agreement unless separately agreed in writing.",
-      "Ktech may contact employers to clarify requirements, discuss talent needs, and propose next steps.",
+      "KTech may contact employers to clarify requirements, discuss talent needs, and propose next steps.",
     ],
   },
   {
     title: "Job Listings",
     points: [
-      "Job postings may represent client hiring requirements or Ktech internal roles.",
+      "Job postings may represent client hiring requirements or KTech internal roles.",
       "Job details may change, expire, or be closed without prior notice.",
-      "Ktech aims to keep job information accurate, but availability is not guaranteed.",
+      "KTech aims to keep job information accurate, but availability is not guaranteed.",
     ],
   },
   {
     title: "Website Content",
     points: [
       "Website content is provided for general information and business communication purposes.",
-      "Users should not copy, reproduce, or reuse Ktech website content without permission.",
+      "Users should not copy, reproduce, or reuse KTech website content without permission.",
       "All brand names, logos, and materials should be used only with proper authorisation.",
     ],
   },
@@ -82,7 +82,7 @@ export default function TermsPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[#3D405B]">
-            These Terms of Use outline the basic conditions for using the Ktech
+            These Terms of Use outline the basic conditions for using the KTech
             IT Services website, submitting employer enquiries, applying to jobs,
             and uploading candidate information.
           </p>
@@ -175,14 +175,14 @@ export default function TermsPage() {
 
             <p className="mt-4 max-w-3xl text-sm leading-7 text-[#F4F1DE]/80">
               For questions about website use, candidate submissions, employer
-              enquiries, or job listings, contact Ktech IT Services.
+              enquiries, or job listings, contact KTech IT Services.
             </p>
 
             <a
               href="mailto:hello@ktechitservices.com"
               className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#E07A5F]"
             >
-              Email Ktech <ArrowRight size={16} />
+              Email KTech <ArrowRight size={16} />
             </a>
           </div>
         </div>

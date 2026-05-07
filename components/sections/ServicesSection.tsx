@@ -66,7 +66,7 @@ export function ServicesSection() {
           </h2>
 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
-            Ktech combines IT staffing, candidate database management, and
+            KTech combines IT staffing, candidate database management, and
             technology delivery support to help businesses hire and scale
             faster.
           </p>

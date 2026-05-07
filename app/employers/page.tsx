@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Hire IT Talent",
   description:
-    "Submit your IT hiring requirement and get relevant technology candidate shortlists with Ktech IT Services.",
+    "Submit your IT hiring requirement and get relevant technology candidate shortlists with KTech IT Services.",
 };
 
 const painPoints = [
@@ -49,7 +49,7 @@ const hiringSolutions = [
     icon: Database,
     title: "Candidate Database",
     description:
-      "Use Ktech’s growing talent network to identify suitable profiles faster.",
+      "Use KTech’s growing talent network to identify suitable profiles faster.",
   },
 ];
 
@@ -71,7 +71,7 @@ const process = [
   {
     title: "Search & Screen",
     description:
-      "Ktech reviews applications, searches its database, and filters relevant IT profiles.",
+      "KTech reviews applications, searches its database, and filters relevant IT profiles.",
   },
   {
     title: "Present Shortlist",
@@ -107,7 +107,7 @@ export default function EmployersPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Ktech helps companies fill technology roles by reviewing hiring
+              KTech helps companies fill technology roles by reviewing hiring
               needs, posting active jobs, sourcing candidates, and shortlisting
               relevant IT professionals.
             </p>
@@ -148,7 +148,7 @@ export default function EmployersPage() {
                 <div className="mt-6 space-y-4">
                   {[
                     "Employer submits hiring need",
-                    "Ktech reviews the requirement",
+                    "KTech reviews the requirement",
                     "Job is posted or sourced internally",
                     "Relevant IT profiles are shortlisted",
                   ].map((item) => (
@@ -198,7 +198,7 @@ export default function EmployersPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech is built for companies that need relevant technology talent
+              KTech is built for companies that need relevant technology talent
               without wasting time on broad, unfocused applicant pools.
             </p>
           </div>
@@ -232,7 +232,7 @@ export default function EmployersPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech can support urgent contract hiring, permanent roles,
+              KTech can support urgent contract hiring, permanent roles,
               contract-to-hire pathways, and database-led candidate matching.
             </p>
           </div>
@@ -277,7 +277,7 @@ export default function EmployersPage() {
             </h2>
 
             <p className="mx-auto mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech keeps the hiring process structured so your team can move
+              KTech keeps the hiring process structured so your team can move
               from requirement to shortlist faster.
             </p>
           </div>
@@ -318,7 +318,7 @@ export default function EmployersPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech can support roles across technology-led organisations and
+              KTech can support roles across technology-led organisations and
               business teams building digital capability.
             </p>
           </div>
@@ -351,7 +351,7 @@ export default function EmployersPage() {
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
               Keep it simple. Share the role, timeline, and contact details.
-              Ktech will review the requirement and help identify relevant IT
+              KTech will review the requirement and help identify relevant IT
               professionals.
             </p>
 
@@ -360,8 +360,8 @@ export default function EmployersPage() {
 
               <div className="mt-5 space-y-4">
                 {[
-                  "Your requirement is reviewed by the Ktech team.",
-                  "Ktech clarifies the role and skills needed.",
+                  "Your requirement is reviewed by the KTech team.",
+                  "KTech clarifies the role and skills needed.",
                   "Relevant candidates are sourced or shortlisted.",
                 ].map((item) => (
                   <div key={item} className="flex gap-3">

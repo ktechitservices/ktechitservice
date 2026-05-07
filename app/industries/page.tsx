@@ -18,7 +18,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Industries Served",
   description:
-    "Ktech supports IT hiring across technology, finance, healthcare, government, energy, and enterprise IT.",
+    "KTech supports IT hiring across technology, finance, healthcare, government, energy, and enterprise IT.",
 };
 
 const industries = [
@@ -97,7 +97,7 @@ export default function IndustriesPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Ktech helps companies source technology professionals across
+              KTech helps companies source technology professionals across
               industries where software, cloud, data, cybersecurity, and digital
               delivery are critical.
             </p>
@@ -172,7 +172,7 @@ export default function IndustriesPage() {
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
-              Ktech can support employers across sectors that need reliable IT
+              KTech can support employers across sectors that need reliable IT
               talent, whether for delivery teams, internal systems, reporting,
               security, or transformation work.
             </p>
@@ -237,7 +237,7 @@ export default function IndustriesPage() {
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
               A cloud engineer in finance, a data analyst in healthcare, and a
               developer in SaaS may need similar tools but different business
-              awareness. Ktech’s positioning should make that clear to hiring
+              awareness. KTech’s positioning should make that clear to hiring
               managers.
             </p>
           </div>
@@ -269,7 +269,7 @@ export default function IndustriesPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#F4F1DE]/80">
-              Share your hiring requirement and Ktech will help identify
+              Share your hiring requirement and KTech will help identify
               relevant technology professionals for your business context.
             </p>
 
@@ -290,7 +290,7 @@ export default function IndustriesPage() {
 
             <p className="mt-5 text-lg leading-8 text-white/85">
               Search current roles or upload your resume to stay visible for
-              future opportunities across Ktech’s client and internal roles.
+              future opportunities across KTech’s client and internal roles.
             </p>
 
             <a

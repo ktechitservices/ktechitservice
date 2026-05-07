@@ -15,7 +15,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Read how Ktech IT Services handles candidate, employer, resume, and website enquiry information.",
+    "Read how KTech IT Services handles candidate, employer, resume, and website enquiry information.",
 };
 
 const sections = [
@@ -35,21 +35,21 @@ const sections = [
       "To help employers fulfil hiring requirements.",
       "To manage applications, resume submissions, and employer enquiries.",
       "To communicate with candidates, employers, and business contacts.",
-      "To improve Ktech’s website, services, and recruitment process.",
+      "To improve KTech’s website, services, and recruitment process.",
     ],
   },
   {
     title: "Resume and Candidate Database",
     points: [
       "Candidates may upload resumes for specific jobs or for future opportunities.",
-      "If no current job matches a candidate’s profile, Ktech may retain the resume in its candidate database for future matching.",
-      "Candidate information may be reviewed by authorised Ktech team members for recruitment-related purposes.",
+      "If no current job matches a candidate’s profile, KTech may retain the resume in its candidate database for future matching.",
+      "Candidate information may be reviewed by authorised KTech team members for recruitment-related purposes.",
     ],
   },
   {
     title: "Data Protection",
     points: [
-      "Ktech aims to handle submitted information with reasonable security safeguards.",
+      "KTech aims to handle submitted information with reasonable security safeguards.",
       "Access to candidate and employer information should be limited to authorised team members.",
       "Resume uploads and application details should be stored securely once backend storage is connected.",
     ],
@@ -73,11 +73,11 @@ export default function PrivacyPage() {
           </div>
 
           <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-            How Ktech handles candidate and employer information.
+            How KTech handles candidate and employer information.
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[#3D405B]">
-            This Privacy Policy explains how Ktech IT Services may collect, use,
+            This Privacy Policy explains how KTech IT Services may collect, use,
             store, and protect information submitted by candidates, employers,
             and website visitors.
           </p>
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
             {
               icon: Mail,
               title: "Communication",
-              text: "Ktech may contact users about roles, hiring needs, or enquiries.",
+              text: "KTech may contact users about roles, hiring needs, or enquiries.",
             },
           ].map((item) => {
             const Icon = item.icon;
@@ -175,7 +175,7 @@ export default function PrivacyPage() {
 
             <p className="mt-4 max-w-3xl text-sm leading-7 text-[#F4F1DE]/80">
               For privacy-related questions or requests about candidate,
-              employer, or website enquiry information, contact Ktech IT
+              employer, or website enquiry information, contact KTech IT
               Services.
             </p>
 
@@ -183,7 +183,7 @@ export default function PrivacyPage() {
               href="mailto:hello@ktechitservices.com"
               className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#E07A5F]"
             >
-              Email Ktech <ArrowRight size={16} />
+              Email KTech <ArrowRight size={16} />
             </a>
           </div>
         </div>

@@ -26,7 +26,7 @@ export function Navbar() {
 
           <div>
             <p className="text-base font-extrabold leading-none text-[#1B3D2F]">
-              Ktech
+              KTech
             </p>
             <p className="text-xs font-medium text-[#3D405B]/70">
               IT Services

@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "IT Staffing & Recruitment",
   description:
-    "Ktech connects employers with skilled IT talent and helps candidates find technology roles that match their skills.",
+    "KTech connects employers with skilled IT talent and helps candidates find technology roles that match their skills.",
 };
 export default function Home() {
   return (

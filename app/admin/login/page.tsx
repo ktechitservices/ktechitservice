@@ -21,7 +21,7 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
             </div>
 
             <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Ktech Admin
+              KTech Admin
             </p>
 
             <h1 className="mt-3 text-4xl font-black tracking-tight text-[#1B3D2F]">
@@ -29,7 +29,7 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
             </h1>
 
             <p className="mt-3 text-sm font-semibold leading-6 text-[#3D405B]/75">
-              Only authorised Ktech staff should access the admin dashboard.
+              Only authorised KTech staff should access the admin dashboard.
             </p>
           </div>
 

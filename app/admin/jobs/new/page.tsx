@@ -23,7 +23,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
         </h2>
 
         <p className="mt-3 max-w-2xl text-sm font-semibold leading-7 text-[#3D405B]">
-          Ktech staff can post client roles or internal Ktech roles. Active jobs
+          KTech staff can post client roles or internal KTech roles. Active jobs
           will appear on the public job portal.
         </p>
       </div>
@@ -74,7 +74,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium outline-none transition focus:border-[#E07A5F]"
             >
               <option value="client">Client Role</option>
-              <option value="internal">Internal Ktech Role</option>
+              <option value="internal">Internal KTech Role</option>
             </select>
           </div>
 
@@ -84,7 +84,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
             </label>
             <input
               name="companyDisplayName"
-              placeholder="Confidential Client / Ktech IT Services"
+              placeholder="Confidential Client / KTech IT Services"
               className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
             />
           </div>

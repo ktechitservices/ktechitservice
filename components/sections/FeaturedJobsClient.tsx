@@ -24,7 +24,7 @@ export function FeaturedJobsClient({ jobs }: FeaturedJobsClientProps) {
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#3D405B]">
               Explore active technology roles or upload your resume to join
-              Ktech’s candidate database for future matches.
+              KTech’s candidate database for future matches.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export function FeaturedJobsClient({ jobs }: FeaturedJobsClientProps) {
           <h3 className="text-2xl font-black">No matching role right now?</h3>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#F4F1DE]/80">
-            Upload your resume anyway. Ktech can keep your profile in its
+            Upload your resume anyway. KTech can keep your profile in its
             candidate database and contact you when a suitable IT opportunity is
             available.
           </p>

@@ -14,7 +14,7 @@ export function CTASection() {
 
         <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#F4F1DE]/80">
           Whether you are a company looking for skilled IT talent or a candidate
-          looking for your next role, Ktech helps connect the right people with
+          looking for your next role, KTech helps connect the right people with
           the right opportunities.
         </p>
 
@@ -24,7 +24,7 @@ export function CTASection() {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#F4F1DE] px-7 py-3 font-extrabold text-[#1B3D2F] transition hover:bg-white"
           >
             <Mail size={18} />
-            Contact Ktech
+            Contact KTech
           </a>
 
           <a
@@ -47,7 +47,7 @@ export function CTASection() {
           <div className="rounded-3xl bg-[#F4F1DE]/10 p-5">
             <p className="text-lg font-black">For Candidates</p>
             <p className="mt-2 text-sm leading-6 text-[#F4F1DE]/75">
-              Browse active roles or join Ktech’s candidate database.
+              Browse active roles or join KTech’s candidate database.
             </p>
           </div>
 

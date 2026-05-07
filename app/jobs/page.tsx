@@ -29,7 +29,7 @@ export default async function JobsPage() {
           <div className="max-w-4xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
               <BriefcaseBusiness size={16} />
-              Ktech Careers & Client Job Portal
+              KTech Careers & Client Job Portal
             </div>
 
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
@@ -37,7 +37,7 @@ export default async function JobsPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Browse active technology roles posted by Ktech for client
+              Browse active technology roles posted by KTech for client
               companies and internal hiring needs. If nothing matches today, you
               can still upload your resume for future opportunities.
             </p>

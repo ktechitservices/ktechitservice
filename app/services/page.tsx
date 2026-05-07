@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "IT Staffing Services",
   description:
-    "Explore Ktech’s IT staffing services including staff augmentation, direct hire, contract-to-hire, and candidate matching.",
+    "Explore KTech’s IT staffing services including staff augmentation, direct hire, contract-to-hire, and candidate matching.",
 };
 
 const staffingModels = [
@@ -48,7 +48,7 @@ const staffingModels = [
     icon: Database,
     title: "Candidate Database Matching",
     description:
-      "Use Ktech’s growing candidate network to identify suitable profiles even before a job is publicly promoted.",
+      "Use KTech’s growing candidate network to identify suitable profiles even before a job is publicly promoted.",
     useCase: "Best for faster shortlists and future hiring pipelines.",
   },
 ];
@@ -80,12 +80,12 @@ const process = [
   {
     title: "Requirement Intake",
     description:
-      "Ktech understands the role, skills, urgency, work mode, and hiring context.",
+      "KTech understands the role, skills, urgency, work mode, and hiring context.",
   },
   {
     title: "Search & Screening",
     description:
-      "Candidates are sourced from applications, resume uploads, and Ktech’s talent database.",
+      "Candidates are sourced from applications, resume uploads, and KTech’s talent database.",
   },
   {
     title: "Shortlist Delivery",
@@ -95,7 +95,7 @@ const process = [
   {
     title: "Placement Support",
     description:
-      "Ktech supports the next steps across interview, selection, and onboarding.",
+      "KTech supports the next steps across interview, selection, and onboarding.",
   },
 ];
 
@@ -103,7 +103,7 @@ const differentiators = [
   "100% technology-focused hiring support",
   "Employer and candidate journeys clearly separated",
   "Active jobs plus general resume database",
-  "Client roles and internal Ktech roles supported",
+  "Client roles and internal KTech roles supported",
   "Shortlist-led process instead of generic application flow",
   "Built for speed, clarity, and relevant matching",
 ];
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Ktech helps companies fill technology roles through staff
+              KTech helps companies fill technology roles through staff
               augmentation, direct hire, contract-to-hire, and candidate
               database matching.
             </p>
@@ -169,7 +169,7 @@ export default function ServicesPage() {
                 <div className="mt-6 space-y-4">
                   {[
                     "Employer shares hiring need",
-                    "Ktech reviews the requirement",
+                    "KTech reviews the requirement",
                     "Active job is posted or sourced internally",
                     "Relevant IT candidates are shortlisted",
                   ].map((item) => (
@@ -203,7 +203,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
-              Different roles need different hiring models. Ktech supports
+              Different roles need different hiring models. KTech supports
               urgent contract hiring, long-term permanent roles, flexible
               contract-to-hire pathways, and database-led candidate matching.
             </p>
@@ -258,7 +258,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
-              Ktech focuses on IT roles where technical fit matters — software,
+              KTech focuses on IT roles where technical fit matters — software,
               cloud, data, security, DevOps, and digital delivery.
             </p>
           </div>
@@ -302,7 +302,7 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Why Ktech
+              Why KTech
             </p>
 
             <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
@@ -310,7 +310,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech is designed for companies that need IT hiring support
+              KTech is designed for companies that need IT hiring support
               without unnecessary complexity — and for candidates who want to
               stay visible for relevant opportunities.
             </p>
@@ -345,7 +345,7 @@ export default function ServicesPage() {
             </h2>
 
             <p className="mx-auto mt-5 text-lg leading-8 text-[#3D405B]">
-              Ktech keeps the process simple so employers can move faster and
+              KTech keeps the process simple so employers can move faster and
               candidates can stay discoverable for current and future roles.
             </p>
           </div>
@@ -384,7 +384,7 @@ export default function ServicesPage() {
       <section className="px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-[2rem] bg-[#1B3D2F] p-8 text-center text-[#F4F1DE] shadow-xl md:p-12">
           <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-            Start with Ktech
+            Start with KTech
           </p>
 
           <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">

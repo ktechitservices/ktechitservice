@@ -20,7 +20,7 @@ const steps = [
     icon: SearchCheck,
     title: "Screen & Match",
     description:
-      "Ktech filters candidates based on technical skills, experience, availability, and role fit.",
+      "KTech filters candidates based on technical skills, experience, availability, and role fit.",
   },
   {
     icon: UsersRound,
@@ -52,7 +52,7 @@ export function ProcessSection() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#3D405B]">
-            Ktech keeps the hiring journey focused, structured, and fast so
+            KTech keeps the hiring journey focused, structured, and fast so
             businesses can spend less time filtering and more time selecting the
             right talent.
           </p>

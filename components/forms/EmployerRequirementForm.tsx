@@ -82,7 +82,7 @@ export function EmployerRequirementForm() {
         </h2>
 
         <p className="mt-3 text-sm leading-6 text-[#3D405B]">
-          Share your hiring need and Ktech will help identify suitable IT talent
+          Share your hiring need and KTech will help identify suitable IT talent
           for your team.
         </p>
       </div>
@@ -91,7 +91,7 @@ export function EmployerRequirementForm() {
         <div className="mb-6 flex gap-3 rounded-2xl bg-[#1B3D2F] p-4 text-[#F4F1DE]">
           <CheckCircle2 className="shrink-0 text-[#E07A5F]" />
           <p className="text-sm font-bold">
-            Your hiring request has been submitted. Ktech will review it soon.
+            Your hiring request has been submitted. KTech will review it soon.
           </p>
         </div>
       )}

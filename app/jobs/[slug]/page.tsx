@@ -27,12 +27,12 @@ export async function generateMetadata({ params }: JobPageProps) {
 
   if (!job) {
     return {
-      title: "Job Not Found | Ktech IT Services",
+      title: "Job Not Found | KTech IT Services",
     };
   }
 
   return {
-    title: `${job.title} | Ktech IT Services`,
+    title: `${job.title} | KTech IT Services`,
     description: job.summary,
   };
 }
@@ -52,7 +52,7 @@ export default async function JobDetailPage({ params }: JobPageProps) {
     description: job.summary,
     hiringOrganization: {
       "@type": "Organization",
-      name: "Ktech IT Services",
+      name: "KTech IT Services",
     },
     jobLocationType: job.location.toLowerCase().includes("remote")
       ? "TELECOMMUTE"
@@ -191,7 +191,7 @@ export default async function JobDetailPage({ params }: JobPageProps) {
               </h2>
 
               <p className="mt-4 text-sm leading-7 text-white/85">
-                Send your resume to Ktech and mention this job title in the
+                Send your resume to KTech and mention this job title in the
                 subject line. A proper database-backed application form will be
                 connected in the backend stage.
               </p>
@@ -215,7 +215,7 @@ export default async function JobDetailPage({ params }: JobPageProps) {
               <div className="mt-7 rounded-3xl bg-white/15 p-5">
                 <p className="font-black">No perfect match?</p>
                 <p className="mt-2 text-sm leading-6 text-white/80">
-                  Join Ktech’s candidate database so the team can contact you
+                  Join KTech’s candidate database so the team can contact you
                   when a suitable IT opportunity becomes available.
                 </p>
               </div>

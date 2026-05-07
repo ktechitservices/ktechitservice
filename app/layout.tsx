@@ -10,11 +10,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ktechitservices.com"),
   title: {
-    default: "Ktech IT Services | IT Staffing & Recruitment",
-    template: "%s | Ktech IT Services",
+    default: "KTech IT Services | IT Staffing & Recruitment",
+    template: "%s | KTech IT Services",
   },
   description:
-    "Ktech IT Services helps companies hire skilled IT professionals and helps candidates find better technology roles.",
+    "KTech IT Services helps companies hire skilled IT professionals and helps candidates find better technology roles.",
   keywords: [
     "IT staffing",
     "IT recruitment",
@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     "data analyst jobs",
   ],
   openGraph: {
-    title: "Ktech IT Services | IT Staffing & Recruitment",
+    title: "KTech IT Services | IT Staffing & Recruitment",
     description:
-      "Hire skilled IT talent or find your next technology role with Ktech IT Services.",
+      "Hire skilled IT talent or find your next technology role with KTech IT Services.",
     url: "https://ktechitservices.com",
-    siteName: "Ktech IT Services",
+    siteName: "KTech IT Services",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ktech IT Services | IT Staffing & Recruitment",
+    title: "KTech IT Services | IT Staffing & Recruitment",
     description:
-      "Hire skilled IT talent or find your next technology role with Ktech IT Services.",
+      "Hire skilled IT talent or find your next technology role with KTech IT Services.",
   },
 };
 

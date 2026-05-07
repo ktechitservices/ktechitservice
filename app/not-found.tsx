@@ -32,7 +32,7 @@ export default function NotFound() {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
             The page you are looking for may have been moved, deleted, or never
-            existed. You can return home, explore jobs, or choose the right Ktech
+            existed. You can return home, explore jobs, or choose the right KTech
             pathway below.
           </p>
 
@@ -96,7 +96,7 @@ export default function NotFound() {
               </h2>
 
               <p className="mt-3 text-sm leading-7 text-[#3D405B]">
-                Explore Ktech’s IT staffing and services support.
+                Explore KTech’s IT staffing and services support.
               </p>
             </a>
           </div>
