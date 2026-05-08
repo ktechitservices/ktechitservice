@@ -1,5 +1,11 @@
 import { login } from "./actions";
-import { ShieldCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  BriefcaseBusiness,
+  CheckCircle2,
+  LockKeyhole,
+  ShieldCheck,
+} from "lucide-react";
 
 type LoginPageProps = {
   searchParams: Promise<{
@@ -12,76 +18,165 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
   const hasError = params.error === "invalid_credentials";
 
   return (
-    <main className="min-h-screen bg-[#F4F1DE] px-6 py-20 text-[#3D405B] lg:px-8">
-      <div className="mx-auto flex min-h-[70vh] max-w-md items-center">
-        <div className="w-full rounded-[2rem] border border-[#1B3D2F]/10 bg-white/80 p-7 shadow-xl">
-          <div className="mb-8 text-center">
-            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE]">
-              <ShieldCheck size={30} />
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-700">
+      <section className="grid min-h-screen lg:grid-cols-[0.95fr_1.05fr]">
+        {/* Left panel */}
+        <div className="hidden bg-[#161925] p-10 text-white lg:flex lg:flex-col lg:justify-between">
+          <a href="/" className="inline-flex w-fit items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#CBF7ED] text-[#161925]">
+              <span className="text-sm font-black">KT</span>
             </div>
 
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              KTech Admin
-            </p>
+            <div>
+              <p className="text-lg font-black leading-none text-white">
+                KTech
+              </p>
+              <p className="text-xs font-semibold text-slate-400">
+                IT Services
+              </p>
+            </div>
+          </a>
 
-            <h1 className="mt-3 text-4xl font-black tracking-tight text-[#1B3D2F]">
-              Staff login
+          <div className="max-w-xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-[#CBF7ED]">
+              <ShieldCheck size={16} />
+              Internal Admin Access
+            </div>
+
+            <h1 className="text-5xl font-black tracking-tight text-white">
+              Manage KTech jobs, candidates, and employer leads.
             </h1>
 
-            <p className="mt-3 text-sm font-semibold leading-6 text-[#3D405B]/75">
-              Only authorised KTech staff should access the admin dashboard.
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              This dashboard is for authorised KTech staff to manage job
+              postings, candidate profiles, resume records, and employer hiring
+              enquiries.
             </p>
+
+            <div className="mt-8 space-y-4">
+              {[
+                "Create and manage active job postings",
+                "Review candidate profiles and resume uploads",
+                "Track employer hiring requirements",
+                "Support client and internal hiring workflows",
+              ].map((item) => (
+                <div key={item} className="flex gap-3">
+                  <CheckCircle2
+                    className="mt-0.5 shrink-0 text-[#CBF7ED]"
+                    size={20}
+                  />
+                  <p className="text-sm font-semibold leading-6 text-slate-300">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {hasError && (
-            <div className="mb-5 rounded-2xl bg-[#E07A5F]/15 p-4 text-sm font-bold text-[#E07A5F]">
-              Invalid email or password. Please try again.
-            </div>
-          )}
-
-          <form action={login} className="space-y-5">
-            <div>
-              <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
-                Email
-              </label>
-              <input
-                name="email"
-                type="email"
-                required
-                placeholder="admin@ktechitservices.com"
-                className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
-              />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
-                Password
-              </label>
-              <input
-                name="password"
-                type="password"
-                required
-                placeholder="••••••••"
-                className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#1B3D2F] px-6 py-3 font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
-            >
-              Login to Admin
-            </button>
-          </form>
-
-          <a
-            href="/"
-            className="mt-6 block text-center text-sm font-extrabold text-[#E07A5F]"
-          >
-            Back to website
-          </a>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8EA8C3]">
+              Protected workspace
+            </p>
+            <p className="mt-3 text-sm font-semibold leading-7 text-slate-300">
+              Only authorised users should access KTech internal hiring and
+              candidate management tools.
+            </p>
+          </div>
         </div>
-      </div>
+
+        {/* Login panel */}
+        <div className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+          <div className="w-full max-w-md">
+            <a
+              href="/"
+              className="mb-8 inline-flex items-center gap-2 text-sm font-black text-[#23395B] hover:text-[#406E8E]"
+            >
+              <ArrowLeft size={16} />
+              Back to website
+            </a>
+
+            <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-lg sm:p-8">
+              <div className="mb-8 text-center">
+                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#23395B] text-white">
+                  <LockKeyhole size={30} />
+                </div>
+
+                <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+                  KTech Admin
+                </p>
+
+                <h2 className="mt-3 text-4xl font-black tracking-tight text-[#161925]">
+                  Staff login
+                </h2>
+
+                <p className="mt-3 text-sm font-medium leading-7 text-slate-600">
+                  Sign in to access the internal dashboard.
+                </p>
+              </div>
+
+              {hasError && (
+                <div className="mb-5 rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700">
+                  Invalid email or password. Please try again.
+                </div>
+              )}
+
+              <form action={login} className="space-y-5">
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-[#161925]">
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="admin@ktechitservices.com"
+                    className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-[#161925]">
+                    Password
+                  </label>
+                  <input
+                    name="password"
+                    type="password"
+                    required
+                    placeholder="••••••••"
+                    className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
+                >
+                  Login to Admin
+                  <ShieldCheck size={18} />
+                </button>
+              </form>
+
+              <div className="mt-7 rounded-2xl bg-[#F8FAFC] p-5">
+                <div className="flex gap-3">
+                  <BriefcaseBusiness
+                    className="mt-0.5 shrink-0 text-[#406E8E]"
+                    size={20}
+                  />
+                  <p className="text-sm font-semibold leading-7 text-slate-600">
+                    After login, authorised staff can manage jobs, candidates,
+                    resumes, and employer leads.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-xs font-semibold leading-6 text-slate-500">
+              KTech IT Services internal dashboard. Unauthorised access is not
+              permitted.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

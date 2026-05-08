@@ -11,41 +11,38 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: "IT Jobs",
   description:
-    "Explore active IT jobs across software, cloud, data, cybersecurity, and digital delivery.",
+    "Explore active IT jobs across software, cloud, data, cybersecurity, infrastructure, and digital delivery.",
 };
 
 export default async function JobsPage() {
   const jobs = await getActiveJobs();
 
   return (
-    <main className="min-h-screen bg-[#F4F1DE] text-[#3D405B]">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-700">
       <Navbar />
 
-      <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24">
-        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#E07A5F]/20 blur-3xl" />
-        <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#1B3D2F]/15 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl">
+      <section className="relative overflow-hidden border-b border-[#E2E8F0] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-2 text-sm font-bold text-[#23395B] shadow-sm">
               <BriefcaseBusiness size={16} />
               KTech Careers & Client Job Portal
             </div>
 
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-              Find IT roles that match your skills.
+            <h1 className="max-w-5xl text-4xl font-black tracking-tight text-[#161925] sm:text-5xl lg:text-6xl">
+              Find technology roles that match your skills.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
               Browse active technology roles posted by KTech for client
               companies and internal hiring needs. If nothing matches today, you
               can still upload your resume for future opportunities.
             </p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#open-roles"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1B3D2F] px-7 py-3 font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
               >
                 Search Open Jobs
                 <Search size={18} />
@@ -53,7 +50,7 @@ export default async function JobsPage() {
 
               <a
                 href="/candidates"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-7 py-3 font-extrabold text-white transition hover:bg-[#cf6b52]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#CBD5E1] bg-white px-6 py-3 text-sm font-bold text-[#23395B] transition hover:border-[#23395B] hover:bg-slate-50"
               >
                 Upload Resume
                 <UploadCloud size={18} />

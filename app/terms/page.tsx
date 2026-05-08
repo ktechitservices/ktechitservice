@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import {
@@ -9,7 +10,6 @@ import {
   ShieldCheck,
   UploadCloud,
 } from "lucide-react";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Read the website terms for candidates, employers, and visitors using KTech IT Services.",
 };
 
-const terms = [
+const termsSections = [
   {
     title: "Use of the Website",
     points: [
@@ -48,7 +48,7 @@ const terms = [
     points: [
       "Job postings may represent client hiring requirements or KTech internal roles.",
       "Job details may change, expire, or be closed without prior notice.",
-      "KTech aims to keep job information accurate, but availability is not guaranteed.",
+      "KTech aims to keep job information accurate, but job availability is not guaranteed.",
     ],
   },
   {
@@ -61,92 +61,92 @@ const terms = [
   },
 ];
 
+const quickCards = [
+  {
+    icon: BriefcaseBusiness,
+    title: "Employers",
+    text: "Hiring enquiries start a conversation but do not create a binding agreement by themselves.",
+  },
+  {
+    icon: UploadCloud,
+    title: "Candidates",
+    text: "Resume submissions may be reviewed for current or future opportunities but do not guarantee placement.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Website Use",
+    text: "Users must use the website responsibly and submit accurate information.",
+  },
+];
+
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#F4F1DE] text-[#3D405B]">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-700">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24">
-        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#E07A5F]/20 blur-3xl" />
-        <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#1B3D2F]/15 blur-3xl" />
+      <section className="border-b border-[#E2E8F0] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-2 text-sm font-bold text-[#23395B] shadow-sm">
+              <Scale size={16} />
+              Terms of Use
+            </div>
 
-        <div className="relative mx-auto max-w-5xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
-            <Scale size={16} />
-            Terms of Use
+            <h1 className="max-w-5xl text-4xl font-black tracking-tight text-[#161925] sm:text-5xl lg:text-6xl">
+              Website terms for candidates, employers, and visitors.
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              These Terms of Use outline the basic conditions for using the
+              KTech IT Services website, submitting employer enquiries, applying
+              to jobs, and uploading candidate information.
+            </p>
+
+            <div className="mt-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
+              <p className="text-sm font-semibold leading-7 text-slate-700">
+                This page is a practical website draft and should be reviewed by
+                a qualified legal professional before final launch.
+              </p>
+            </div>
           </div>
 
-          <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-            Website terms for candidates, employers, and visitors.
-          </h1>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {quickCards.map((card) => {
+              const Icon = card.icon;
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#3D405B]">
-            These Terms of Use outline the basic conditions for using the KTech
-            IT Services website, submitting employer enquiries, applying to jobs,
-            and uploading candidate information.
-          </p>
+              return (
+                <article
+                  key={card.title}
+                  className="rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
+                >
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white">
+                    <Icon size={26} />
+                  </div>
 
-          <p className="mt-5 rounded-3xl bg-white/70 p-5 text-sm font-semibold leading-7 text-[#3D405B] shadow-sm">
-            This page is a practical website draft and should be reviewed by a
-            qualified legal professional before launch.
-          </p>
+                  <h2 className="text-xl font-black tracking-tight text-[#161925]">
+                    {card.title}
+                  </h2>
+
+                  <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
+                    {card.text}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Quick Cards */}
-      <section className="px-6 py-12 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
-          {[
-            {
-              icon: BriefcaseBusiness,
-              title: "Employers",
-              text: "Hiring enquiries start a conversation but do not create a binding agreement by themselves.",
-            },
-            {
-              icon: UploadCloud,
-              title: "Candidates",
-              text: "Resume submissions may be reviewed for current or future opportunities but do not guarantee placement.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "Website Use",
-              text: "Users must use the website responsibly and submit accurate information.",
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <div
-                key={item.title}
-                className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/70 p-7 shadow-sm"
-              >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#DDEDE6] text-[#1B3D2F]">
-                  <Icon size={26} />
-                </div>
-
-                <h2 className="text-xl font-black text-[#1B3D2F]">
-                  {item.title}
-                </h2>
-
-                <p className="mt-3 text-sm leading-7 text-[#3D405B]">
-                  {item.text}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Terms Sections */}
-      <section className="px-6 py-16 lg:px-8">
+      {/* Terms Content */}
+      <section className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl space-y-6">
-          {terms.map((section) => (
-            <div
+          {termsSections.map((section) => (
+            <article
               key={section.title}
-              className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/75 p-7 shadow-sm"
+              className="rounded-3xl border border-[#E2E8F0] bg-white p-7 shadow-sm sm:p-8"
             >
-              <h2 className="text-3xl font-black tracking-tight text-[#1B3D2F]">
+              <h2 className="text-3xl font-black tracking-tight text-[#161925]">
                 {section.title}
               </h2>
 
@@ -154,37 +154,38 @@ export default function TermsPage() {
                 {section.points.map((point) => (
                   <div key={point} className="flex gap-3">
                     <CheckCircle2
-                      className="mt-0.5 shrink-0 text-[#E07A5F]"
+                      className="mt-0.5 shrink-0 text-[#406E8E]"
                       size={20}
                     />
-                    <p className="text-sm font-semibold leading-7 text-[#3D405B]">
+                    <p className="text-sm font-semibold leading-7 text-slate-700">
                       {point}
                     </p>
                   </div>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
 
-          <div className="rounded-[2rem] bg-[#1B3D2F] p-8 text-[#F4F1DE] shadow-xl">
-            <FileText className="text-[#E07A5F]" size={34} />
+          <article className="rounded-3xl bg-[#161925] p-8 text-white shadow-lg">
+            <FileText className="text-[#CBF7ED]" size={36} />
 
-            <h2 className="mt-6 text-3xl font-black tracking-tight">
+            <h2 className="mt-6 text-3xl font-black tracking-tight text-white">
               Questions about these terms?
             </h2>
 
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-[#F4F1DE]/80">
+            <p className="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-300">
               For questions about website use, candidate submissions, employer
               enquiries, or job listings, contact KTech IT Services.
             </p>
 
             <a
               href="mailto:hello@ktechitservices.com"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-[#E07A5F]"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#CBF7ED]"
             >
-              Email KTech <ArrowRight size={16} />
+              Email KTech
+              <ArrowRight size={16} />
             </a>
-          </div>
+          </article>
         </div>
       </section>
 

@@ -1,127 +1,106 @@
-"use client";
-
-import { motion } from "motion/react";
+import Image from "next/image";
 import {
   ArrowRight,
   BriefcaseBusiness,
   CheckCircle2,
   Search,
-  UploadCloud,
-  Users,
 } from "lucide-react";
+
+const proofPoints = [
+  "IT staffing and recruitment support",
+  "Client and internal job posting capability",
+  "Candidate resume database",
+  "Software, cloud, data, and cybersecurity talent",
+];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F4F1DE] px-6 py-20 lg:px-8 lg:py-24">
-      <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#E07A5F]/20 blur-3xl" />
-      <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#1B3D2F]/15 blur-3xl" />
-
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-        >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/65 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
+    <section className="relative overflow-hidden bg-white">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
+        <div className="flex flex-col justify-center">
+          <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-2 text-sm font-bold text-[#23395B] shadow-sm">
             <BriefcaseBusiness size={16} />
-            The future of IT workforce hiring
+            IT Staffing & Technology Recruitment
           </div>
 
-          <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-            Right IT Talent.
-            <br />
-            Right Now.
+          <h1 className="max-w-4xl text-4xl font-black tracking-tight text-[#161925] sm:text-5xl lg:text-6xl">
+            Connecting businesses with skilled IT talent.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-            KTech helps companies hire skilled IT professionals faster while
-            connecting candidates with technology roles that match their real
-            skills.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            KTech helps employers fill critical technology roles and helps
+            candidates find the right opportunities across software, cloud,
+            infrastructure, data, cybersecurity, and digital transformation.
           </p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="/employers"
-              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1B3D2F] px-7 py-3 font-bold text-[#F4F1DE] transition hover:bg-[#163226]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
             >
-              Find IT Talent
-              <ArrowRight
-                size={18}
-                className="transition group-hover:translate-x-1"
-              />
+              Hire IT Talent
+              <ArrowRight size={18} />
             </a>
 
             <a
               href="/jobs"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-7 py-3 font-bold text-white transition hover:bg-[#cf6b52]"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#CBD5E1] bg-white px-6 py-3 text-sm font-bold text-[#23395B] transition hover:border-[#23395B] hover:bg-slate-50"
             >
-              Find a Role
+              Search Jobs
               <Search size={18} />
             </a>
           </div>
 
-          <div className="mt-8 rounded-3xl border border-[#1B3D2F]/10 bg-white/70 p-5 shadow-sm">
-            <div className="flex gap-3">
-              <CheckCircle2 className="mt-0.5 shrink-0 text-[#1B3D2F]" />
-              <p className="text-sm leading-6 text-[#3D405B]">
-                Employers submit hiring needs. KTech reviews, posts active
-                roles, and matches candidates from applications and its talent
-                database.
-              </p>
-            </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {proofPoints.map((point) => (
+              <div key={point} className="flex items-start gap-3">
+                <CheckCircle2
+                  className="mt-0.5 shrink-0 text-[#406E8E]"
+                  size={20}
+                />
+                <p className="text-sm font-semibold leading-6 text-slate-700">
+                  {point}
+                </p>
+              </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, rotate: -1 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.65 }}
-          className="relative"
-        >
-          <div className="absolute -inset-3 rounded-[2rem] bg-[#DCD9FF] blur-sm" />
+        <div className="relative">
+          <div className="overflow-hidden rounded-3xl border border-[#E2E8F0] bg-white shadow-xl">
+            <div className="relative block h-[320px] w-full overflow-hidden sm:h-[420px]">
+              <Image
+                src="/images/ktech-hero.jpg"
+                alt="Professional IT staffing and recruitment meeting"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#1B3D2F]/10 bg-white p-4 shadow-xl">
-            <div className="rounded-[1.5rem] bg-[#1B3D2F] p-6 text-[#F4F1DE]">
-              <p className="text-sm font-medium text-[#F4F1DE]/75">
-                KTech Talent Workflow
-              </p>
+            <div className="grid gap-4 border-t border-[#E2E8F0] bg-white p-5 sm:grid-cols-2">
+              <div className="rounded-2xl bg-[#F8FAFC] p-4">
+                <p className="text-sm font-black text-[#161925]">
+                  For Employers
+                </p>
+                <p className="mt-2 text-xs font-semibold leading-5 text-slate-600">
+                  Share hiring requirements and receive relevant IT talent
+                  support.
+                </p>
+              </div>
 
-              <h2 className="mt-2 text-3xl font-black leading-tight">
-                One platform.
-                <br />
-                Two journeys.
-              </h2>
-
-              <div className="mt-6 grid gap-4">
-                <div className="rounded-3xl bg-[#F4F1DE] p-5 text-[#1B3D2F]">
-                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE]">
-                    <Users size={21} />
-                  </div>
-
-                  <h3 className="text-xl font-extrabold">Employers</h3>
-
-                  <p className="mt-2 text-sm leading-6 text-[#3D405B]">
-                    Share your hiring requirement and get a relevant IT talent
-                    shortlist.
-                  </p>
-                </div>
-
-                <div className="rounded-3xl bg-[#E07A5F] p-5 text-white">
-                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#E07A5F]">
-                    <UploadCloud size={21} />
-                  </div>
-
-                  <h3 className="text-xl font-extrabold">Candidates</h3>
-
-                  <p className="mt-2 text-sm leading-6 text-white/90">
-                    Apply to active jobs or upload your resume for future
-                    opportunities.
-                  </p>
-                </div>
+              <div className="rounded-2xl bg-[#CBF7ED] p-4">
+                <p className="text-sm font-black text-[#161925]">
+                  For Candidates
+                </p>
+                <p className="mt-2 text-xs font-semibold leading-5 text-slate-700">
+                  Search jobs or upload your resume for future opportunities.
+                </p>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -10,97 +10,133 @@ type FeaturedJobsClientProps = {
 
 export function FeaturedJobsClient({ jobs }: FeaturedJobsClientProps) {
   return (
-    <section id="jobs" className="relative bg-[#F4F1DE] px-6 py-24 lg:px-8">
+    <section id="jobs" className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
+          <div className="max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
               Open opportunities
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Featured IT Jobs
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              Featured IT jobs.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Explore active technology roles or upload your resume to join
-              KTech’s candidate database for future matches.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Explore active technology roles posted by KTech for client
+              companies and internal hiring needs.
             </p>
           </div>
 
           <a
-            href="/candidates"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1B3D2F] px-6 py-3 text-sm font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
+            href="/jobs"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
           >
-            Upload Resume <ArrowRight size={18} />
+            View All Jobs
+            <ArrowRight size={18} />
           </a>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {jobs.map((job, index) => (
-            <motion.article
-              key={job.slug}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="group rounded-[2rem] border border-[#1B3D2F]/10 bg-white/70 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+        {jobs.length === 0 ? (
+          <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 text-center shadow-sm">
+            <h3 className="text-2xl font-black text-[#161925]">
+              No active jobs yet.
+            </h3>
+
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+              KTech is building its active jobs board. Candidates can still
+              upload resumes to join the talent database for future
+              opportunities.
+            </p>
+
+            <a
+              href="/candidates"
+              className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
             >
-              <div className="mb-6 flex items-center justify-between">
-                <div className="rounded-full bg-[#E07A5F]/15 px-4 py-2 text-xs font-extrabold text-[#E07A5F]">
-                  {job.type}
-                </div>
-
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE] transition group-hover:bg-[#E07A5F]">
-                  <BriefcaseBusiness size={18} />
-                </div>
-              </div>
-
-              <p className="text-sm font-extrabold text-[#E07A5F]">
-                {job.department}
-              </p>
-
-              <h3 className="mt-3 text-2xl font-black tracking-tight text-[#1B3D2F]">
-                {job.title}
-              </h3>
-
-              <div className="mt-5 space-y-2 text-sm text-[#3D405B]">
-                <div className="flex items-center gap-2">
-                  <MapPin size={16} className="text-[#1B3D2F]" />
-                  <span>{job.location}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Globe2 size={16} className="text-[#1B3D2F]" />
-                  <span>{job.experience || "Experience flexible"}</span>
-                </div>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {job.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-[#F4F1DE] px-3 py-1.5 text-xs font-bold text-[#3D405B]"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href={`/jobs/${job.slug}`}
-                className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-[#1B3D2F] transition group-hover:text-[#E07A5F]"
+              Upload Resume
+            </a>
+          </div>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-3">
+            {jobs.map((job, index) => (
+              <motion.article
+                key={job.slug}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                className="group rounded-3xl border border-[#E2E8F0] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:shadow-lg"
               >
-                View role <ArrowRight size={16} />
-              </a>
-            </motion.article>
-          ))}
-        </div>
+                <div className="mb-6 flex items-start justify-between gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="rounded-lg bg-[#CBF7ED] px-3 py-1.5 text-xs font-black text-[#161925]">
+                      {job.type}
+                    </span>
 
-        <div className="mt-8 rounded-[2rem] border border-[#1B3D2F]/10 bg-[#1B3D2F] p-7 text-center text-[#F4F1DE]">
-          <h3 className="text-2xl font-black">No matching role right now?</h3>
+                    {job.sourceType === "internal" && (
+                      <span className="rounded-lg bg-[#F8FAFC] px-3 py-1.5 text-xs font-black text-[#406E8E]">
+                        KTech Role
+                      </span>
+                    )}
+                  </div>
 
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#F4F1DE]/80">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#23395B] text-white transition group-hover:bg-[#406E8E]">
+                    <BriefcaseBusiness size={19} />
+                  </div>
+                </div>
+
+                <p className="text-sm font-black text-[#406E8E]">
+                  {job.department}
+                </p>
+
+                <h3 className="mt-3 text-2xl font-black tracking-tight text-[#161925]">
+                  {job.title}
+                </h3>
+
+                <p className="mt-4 line-clamp-3 text-sm font-medium leading-7 text-slate-600">
+                  {job.summary}
+                </p>
+
+                <div className="mt-6 space-y-3 text-sm font-semibold text-slate-600">
+                  <div className="flex items-center gap-2">
+                    <MapPin size={17} className="text-[#406E8E]" />
+                    <span>{job.location}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Globe2 size={17} className="text-[#406E8E]" />
+                    <span>{job.workMode || "Flexible"}</span>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {(job.skills || []).slice(0, 4).map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3 py-1.5 text-xs font-bold text-slate-700"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={`/jobs/${job.slug}`}
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-black text-[#23395B] transition group-hover:text-[#406E8E]"
+                >
+                  View role <ArrowRight size={16} />
+                </a>
+              </motion.article>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-10 rounded-3xl bg-[#161925] p-8 text-center text-white shadow-lg">
+          <h3 className="text-2xl font-black text-white">
+            No matching role right now?
+          </h3>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm font-medium leading-7 text-slate-300">
             Upload your resume anyway. KTech can keep your profile in its
             candidate database and contact you when a suitable IT opportunity is
             available.
@@ -108,7 +144,7 @@ export function FeaturedJobsClient({ jobs }: FeaturedJobsClientProps) {
 
           <a
             href="/candidates"
-            className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-[#E07A5F] px-6 py-3 text-sm font-extrabold text-white transition hover:bg-[#cf6b52]"
+            className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xl bg-[#CBF7ED] px-6 py-3 text-sm font-black text-[#161925] transition hover:bg-white"
           >
             Join Candidate Database
           </a>

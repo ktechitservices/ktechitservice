@@ -1,60 +1,54 @@
-"use client";
-
-import { motion } from "motion/react";
 import {
-  ArrowRight,
+  BriefcaseBusiness,
+  CheckCircle2,
   ClipboardList,
   SearchCheck,
-  UsersRound,
-  Handshake,
+  Users,
 } from "lucide-react";
 
 const steps = [
   {
     icon: ClipboardList,
-    title: "Share Requirement",
+    title: "Requirement Intake",
     description:
-      "Employers submit role details, required skills, work mode, budget, and hiring timeline.",
+      "Employers share role details, skills required, work mode, urgency, and hiring context.",
   },
   {
     icon: SearchCheck,
-    title: "Screen & Match",
+    title: "Talent Search",
     description:
-      "KTech filters candidates based on technical skills, experience, availability, and role fit.",
+      "KTech reviews applications, searches its candidate database, and identifies relevant IT profiles.",
   },
   {
-    icon: UsersRound,
-    title: "Shortlist Talent",
+    icon: Users,
+    title: "Shortlist Delivery",
     description:
-      "You receive a focused shortlist of relevant IT professionals instead of generic applications.",
+      "Employers receive focused candidate profiles instead of broad, generic applications.",
   },
   {
-    icon: Handshake,
-    title: "Hire & Scale",
+    icon: BriefcaseBusiness,
+    title: "Interview & Placement",
     description:
-      "Interview, select, and onboard the right technology talent for your business needs.",
+      "KTech supports the next steps across interview coordination, selection, and placement.",
   },
 ];
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative bg-[#F4F1DE] px-6 py-24 lg:px-8">
-      <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#E07A5F]/10 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl">
+    <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-            How it works
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+            Our process
           </p>
 
-          <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-            Simple process. Faster hiring.
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+            A structured hiring workflow from requirement to placement.
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#3D405B]">
-            KTech keeps the hiring journey focused, structured, and fast so
-            businesses can spend less time filtering and more time selecting the
-            right talent.
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            KTech keeps the hiring process clear, practical, and focused on
+            matching employers with relevant IT talent.
           </p>
         </div>
 
@@ -63,38 +57,63 @@ export function ProcessSection() {
             const Icon = step.icon;
 
             return (
-              <motion.div
+              <article
                 key={step.title}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="relative rounded-[2rem] border border-[#1B3D2F]/10 bg-white/70 p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                className="relative rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
               >
-                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#DDEDE6] text-[#1B3D2F]">
-                  <Icon size={28} />
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white">
+                    <Icon size={26} />
+                  </div>
+
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#CBF7ED] text-sm font-black text-[#161925]">
+                    {index + 1}
+                  </div>
                 </div>
 
-                <div className="mx-auto mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#E07A5F] text-sm font-black text-white">
-                  {index + 1}
-                </div>
-
-                <h3 className="text-2xl font-black tracking-tight text-[#1B3D2F]">
+                <h3 className="text-xl font-black tracking-tight text-[#161925]">
                   {step.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#3D405B]">
+                <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
                   {step.description}
                 </p>
-
-                {index !== steps.length - 1 && (
-                  <div className="absolute -right-4 top-1/2 hidden -translate-y-1/2 text-[#E07A5F]/60 md:block">
-                    <ArrowRight size={26} />
-                  </div>
-                )}
-              </motion.div>
+              </article>
             );
           })}
+        </div>
+
+        <div className="mt-12 rounded-3xl border border-[#E2E8F0] bg-[#161925] p-8 text-white shadow-lg">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-[#8EA8C3]">
+                Why it works
+              </p>
+
+              <h3 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+                Less hiring noise. More relevant conversations.
+              </h3>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                "Clear requirement review before sourcing",
+                "Candidate profiles stored for future matching",
+                "Client and internal roles supported",
+                "Technology-focused staffing workflow",
+              ].map((item) => (
+                <div key={item} className="flex gap-3">
+                  <CheckCircle2
+                    className="mt-0.5 shrink-0 text-[#CBF7ED]"
+                    size={20}
+                  />
+                  <p className="text-sm font-semibold leading-6 text-slate-300">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

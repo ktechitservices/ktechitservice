@@ -1,15 +1,99 @@
 import { AdminShell } from "@/components/admin/AdminShell";
-import { ArrowLeft, BriefcaseBusiness, FileText, Plus } from "lucide-react";
-import { createJob } from "./actions";
+import { createClient } from "@/lib/supabase/server";
+import { ArrowLeft, BriefcaseBusiness, FileText, Save } from "lucide-react";
+import { notFound } from "next/navigation";
+import { updateJob } from "./actions";
 
-type NewJobPageProps = {
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
+type EditJobPageProps = {
+  params: Promise<{
+    id: string;
+  }>;
   searchParams: Promise<{
     error?: string;
   }>;
 };
 
-export default async function NewJobPage({ searchParams }: NewJobPageProps) {
-  const params = await searchParams;
+type JobRecord = {
+  id: string;
+  title: string;
+  slug: string;
+  department: string;
+  location: string;
+  employment_type: string;
+  work_mode: string | null;
+  experience: string | null;
+  salary: string | null;
+  source_type: "client" | "internal";
+  company_display_name: string | null;
+  summary: string;
+  responsibilities: string[] | null;
+  requirements: string[] | null;
+  skills: string[] | null;
+  status: "draft" | "active" | "closed";
+};
+
+async function getJob(id: string): Promise<JobRecord | null> {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("jobs")
+    .select(
+      `
+      id,
+      title,
+      slug,
+      department,
+      location,
+      employment_type,
+      work_mode,
+      experience,
+      salary,
+      source_type,
+      company_display_name,
+      summary,
+      responsibilities,
+      requirements,
+      skills,
+      status
+    `
+    )
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
+    console.error("Failed to fetch job for edit:", error);
+    return null;
+  }
+
+  return data as JobRecord;
+}
+
+function getErrorMessage(error?: string) {
+  if (error === "missing_fields") return "Please fill in all required fields.";
+  if (error === "invalid_status") return "Invalid job status selected.";
+  if (error === "invalid_source") return "Invalid job source selected.";
+  if (error === "update_failed")
+    return "Could not update the job. Check if the slug is already used by another job.";
+
+  return null;
+}
+
+export default async function EditJobPage({
+  params,
+  searchParams,
+}: EditJobPageProps) {
+  const { id } = await params;
+  const query = await searchParams;
+  const job = await getJob(id);
+
+  if (!job) {
+    notFound();
+  }
+
+  const errorMessage = getErrorMessage(query.error);
 
   return (
     <AdminShell>
@@ -23,24 +107,22 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
         </a>
 
         <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
-          Add job
+          Edit job
         </p>
 
         <h2 className="mt-3 text-3xl font-black tracking-tight text-[#161925] sm:text-4xl">
-          Create a new job posting.
+          Edit job posting.
         </h2>
 
         <p className="mt-3 max-w-2xl text-sm font-semibold leading-7 text-slate-600">
-          KTech staff can create client roles or internal KTech roles. Active
-          jobs will appear on the public jobs page.
+          Update job details, public status, skills, responsibilities, and
+          requirements. Active jobs appear on the public jobs page.
         </p>
       </div>
 
-      {params.error && (
+      {errorMessage && (
         <div className="mb-6 rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700">
-          {params.error === "missing_fields"
-            ? "Please fill in all required fields."
-            : "Something went wrong while creating the job."}
+          {errorMessage}
         </div>
       )}
 
@@ -49,38 +131,62 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
           <BriefcaseBusiness className="text-[#CBF7ED]" size={36} />
 
           <h3 className="mt-6 text-3xl font-black tracking-tight text-white">
-            Job posting checklist.
+            Editing role details.
           </h3>
 
           <p className="mt-4 text-sm font-semibold leading-7 text-slate-300">
-            Complete the core role information, then add responsibilities,
-            requirements, and skills for better public job detail pages.
+            Keep job information accurate and use draft status when the role
+            should not be visible publicly.
           </p>
 
           <div className="mt-7 space-y-4">
-            {[
-              "Use clear role titles candidates can search",
-              "Choose client or internal KTech role source",
-              "Add skills separated by commas",
-              "Use one responsibility or requirement per line",
-              "Set status to active only when ready to publish",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4"
-              >
-                <p className="text-sm font-semibold leading-6 text-slate-300">
-                  {item}
-                </p>
-              </div>
-            ))}
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8EA8C3]">
+                Current URL
+              </p>
+              <p className="mt-2 break-all text-sm font-semibold leading-6 text-slate-300">
+                /jobs/{job.slug}
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8EA8C3]">
+                Current Status
+              </p>
+              <p className="mt-2 text-sm font-semibold capitalize leading-6 text-slate-300">
+                {job.status}
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8EA8C3]">
+                Source
+              </p>
+              <p className="mt-2 text-sm font-semibold capitalize leading-6 text-slate-300">
+                {job.source_type}
+              </p>
+            </div>
           </div>
+
+          {job.status === "active" && (
+            <a
+              href={`/jobs/${job.slug}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-[#CBF7ED] px-6 py-3 text-sm font-black text-[#161925] transition hover:bg-white"
+            >
+              Open Public Role
+            </a>
+          )}
         </aside>
 
         <form
-          action={createJob}
+          action={updateJob}
           className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-8"
         >
+          <input type="hidden" name="jobId" value={job.id} />
+          <input type="hidden" name="previousSlug" value={job.slug} />
+
           <div className="mb-8 flex items-start gap-4">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#23395B] text-white">
               <FileText size={26} />
@@ -88,12 +194,11 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
 
             <div>
               <h3 className="text-2xl font-black tracking-tight text-[#161925]">
-                Role details
+                Job details
               </h3>
 
               <p className="mt-2 text-sm font-semibold leading-7 text-slate-600">
-                This information will be saved to Supabase and shown publicly if
-                the job status is active.
+                Changes will update the Supabase jobs table.
               </p>
             </div>
           </div>
@@ -106,9 +211,24 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               <input
                 name="title"
                 required
-                placeholder="Software Engineer"
-                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                defaultValue={job.title}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-bold text-[#161925]">
+                Slug *
+              </label>
+              <input
+                name="slug"
+                required
+                defaultValue={job.slug}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+              />
+              <p className="mt-2 text-xs font-semibold text-slate-500">
+                Public URL: /jobs/{job.slug}
+              </p>
             </div>
 
             <div>
@@ -118,8 +238,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               <input
                 name="department"
                 required
-                placeholder="Software Development"
-                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                defaultValue={job.department}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               />
             </div>
 
@@ -129,6 +249,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               </label>
               <select
                 name="sourceType"
+                defaultValue={job.source_type}
                 className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               >
                 <option value="client">Client Role</option>
@@ -142,8 +263,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               </label>
               <input
                 name="companyDisplayName"
-                placeholder="Confidential Client / KTech IT Services"
-                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                defaultValue={job.company_display_name || ""}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               />
             </div>
 
@@ -154,6 +275,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               <select
                 name="employmentType"
                 required
+                defaultValue={job.employment_type}
                 className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               >
                 <option value="Full-time">Full-time</option>
@@ -169,6 +291,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               </label>
               <select
                 name="workMode"
+                defaultValue={job.work_mode || "Flexible"}
                 className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               >
                 <option value="Remote">Remote</option>
@@ -185,8 +308,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               <input
                 name="location"
                 required
-                placeholder="Remote / United States"
-                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                defaultValue={job.location}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               />
             </div>
 
@@ -196,8 +319,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               </label>
               <input
                 name="experience"
-                placeholder="3+ years"
-                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                defaultValue={job.experience || ""}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               />
             </div>
 
@@ -207,8 +330,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               </label>
               <input
                 name="salary"
-                placeholder="$90k - $130k"
-                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+                defaultValue={job.salary || ""}
+                className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               />
             </div>
 
@@ -218,6 +341,7 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               </label>
               <select
                 name="status"
+                defaultValue={job.status}
                 className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
               >
                 <option value="active">Active</option>
@@ -233,8 +357,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
             </label>
             <input
               name="skills"
-              placeholder="React, Node.js, AWS, TypeScript"
-              className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+              defaultValue={(job.skills || []).join(", ")}
+              className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
             />
             <p className="mt-2 text-xs font-semibold text-slate-500">
               Separate skills with commas.
@@ -249,8 +373,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
               name="summary"
               required
               rows={4}
-              placeholder="Short role summary..."
-              className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+              defaultValue={job.summary}
+              className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
             />
           </div>
 
@@ -261,8 +385,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
             <textarea
               name="responsibilities"
               rows={5}
-              placeholder={`Build and maintain features\nCollaborate with product teams\nWrite clean, tested code`}
-              className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+              defaultValue={(job.responsibilities || []).join("\n")}
+              className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
             />
             <p className="mt-2 text-xs font-semibold text-slate-500">
               Add one responsibility per line.
@@ -276,8 +400,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
             <textarea
               name="requirements"
               rows={5}
-              placeholder={`3+ years of experience\nStrong React knowledge\nGood communication skills`}
-              className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
+              defaultValue={(job.requirements || []).join("\n")}
+              className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
             />
             <p className="mt-2 text-xs font-semibold text-slate-500">
               Add one requirement per line.
@@ -288,8 +412,8 @@ export default async function NewJobPage({ searchParams }: NewJobPageProps) {
             type="submit"
             className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
           >
-            <Plus size={18} />
-            Save Job Posting
+            <Save size={18} />
+            Save Changes
           </button>
         </form>
       </div>

@@ -101,39 +101,39 @@ export function CandidateApplicationForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/80 p-6 shadow-xl md:p-8"
+      className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-lg sm:p-8"
     >
       <div className="mb-8">
-        <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
+        <p className="text-sm font-black uppercase tracking-[0.22em] text-[#406E8E]">
           Candidate profile
         </p>
 
-        <h2 className="mt-3 text-3xl font-black tracking-tight text-[#1B3D2F]">
+        <h2 className="mt-3 text-3xl font-black tracking-tight text-[#161925]">
           Upload your resume.
         </h2>
 
-        <p className="mt-3 text-sm leading-6 text-[#3D405B]">
-          Share your details and join KTech’s IT talent database for current and
-          future opportunities.
+        <p className="mt-3 text-sm font-medium leading-7 text-slate-600">
+          Share your profile with KTech for active IT roles and future
+          technology opportunities.
         </p>
       </div>
 
       {status === "success" && (
-        <div className="mb-6 flex gap-3 rounded-2xl bg-[#1B3D2F] p-4 text-[#F4F1DE]">
-          <CheckCircle2 className="shrink-0 text-[#E07A5F]" />
+        <div className="mb-6 flex gap-3 rounded-2xl bg-[#CBF7ED] p-4 text-[#161925]">
+          <CheckCircle2 className="shrink-0 text-[#23395B]" />
           <p className="text-sm font-bold">{message}</p>
         </div>
       )}
 
       {status === "error" && (
-        <div className="mb-6 rounded-2xl bg-[#E07A5F]/15 p-4 text-sm font-bold text-[#E07A5F]">
+        <div className="mb-6 rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700">
           {message}
         </div>
       )}
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Full Name
           </label>
           <input
@@ -142,12 +142,12 @@ export function CandidateApplicationForm() {
             onChange={updateField}
             required
             placeholder="Your full name"
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Email
           </label>
           <input
@@ -157,12 +157,12 @@ export function CandidateApplicationForm() {
             onChange={updateField}
             required
             placeholder="you@email.com"
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Phone
           </label>
           <input
@@ -170,12 +170,12 @@ export function CandidateApplicationForm() {
             value={formData.phone}
             onChange={updateField}
             placeholder="+1 000 000 0000"
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Location
           </label>
           <input
@@ -183,12 +183,12 @@ export function CandidateApplicationForm() {
             value={formData.location}
             onChange={updateField}
             placeholder="City / Country"
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Current Role
           </label>
           <input
@@ -196,12 +196,12 @@ export function CandidateApplicationForm() {
             value={formData.currentRole}
             onChange={updateField}
             placeholder="Frontend Developer, Data Analyst..."
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Experience
           </label>
           <input
@@ -209,12 +209,12 @@ export function CandidateApplicationForm() {
             value={formData.experience}
             onChange={updateField}
             placeholder="2 years, 5 years..."
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Preferred Role
           </label>
           <input
@@ -222,19 +222,19 @@ export function CandidateApplicationForm() {
             value={formData.preferredRole}
             onChange={updateField}
             placeholder="Software Engineer, Cloud Engineer..."
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+          <label className="mb-2 block text-sm font-bold text-[#161925]">
             Work Mode
           </label>
           <select
             name="workMode"
             value={formData.workMode}
             onChange={updateField}
-            className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition focus:border-[#E07A5F]"
+            className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
           >
             <option value="">Select preference</option>
             <option value="Remote">Remote</option>
@@ -246,7 +246,7 @@ export function CandidateApplicationForm() {
       </div>
 
       <div className="mt-5">
-        <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+        <label className="mb-2 block text-sm font-bold text-[#161925]">
           Key Skills
         </label>
         <input
@@ -254,23 +254,26 @@ export function CandidateApplicationForm() {
           value={formData.skills}
           onChange={updateField}
           placeholder="React, Node.js, AWS, SQL, Python..."
-          className="w-full rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+          className="h-14 w-full rounded-xl border border-[#CBD5E1] bg-white px-4 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
         />
+        <p className="mt-2 text-xs font-semibold text-slate-500">
+          Separate skills with commas.
+        </p>
       </div>
 
       <div className="mt-5">
-        <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+        <label className="mb-2 block text-sm font-bold text-[#161925]">
           Resume
         </label>
 
-        <label className="flex cursor-pointer flex-col items-center justify-center rounded-[1.5rem] border border-dashed border-[#1B3D2F]/20 bg-[#F4F1DE] px-6 py-8 text-center transition hover:border-[#E07A5F] hover:bg-white">
-          <UploadCloud className="mb-3 text-[#E07A5F]" size={34} />
+        <label className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-[#8EA8C3] bg-[#F8FAFC] px-6 py-8 text-center transition hover:border-[#406E8E] hover:bg-white">
+          <UploadCloud className="mb-3 text-[#406E8E]" size={34} />
 
-          <span className="text-sm font-extrabold text-[#1B3D2F]">
+          <span className="text-sm font-black text-[#161925]">
             Click to upload resume
           </span>
 
-          <span className="mt-1 text-xs font-medium text-[#3D405B]/65">
+          <span className="mt-1 text-xs font-semibold text-slate-500">
             PDF, DOC, or DOCX up to 10MB
           </span>
 
@@ -284,15 +287,15 @@ export function CandidateApplicationForm() {
         </label>
 
         {selectedFile && (
-          <div className="mt-3 flex items-center gap-3 rounded-2xl bg-[#1B3D2F] p-4 text-[#F4F1DE]">
-            <FileText className="text-[#E07A5F]" size={20} />
+          <div className="mt-3 flex items-center gap-3 rounded-2xl bg-[#161925] p-4 text-white">
+            <FileText className="text-[#CBF7ED]" size={20} />
             <p className="text-sm font-bold">{selectedFile.name}</p>
           </div>
         )}
       </div>
 
       <div className="mt-5">
-        <label className="mb-2 block text-sm font-bold text-[#1B3D2F]">
+        <label className="mb-2 block text-sm font-bold text-[#161925]">
           Message
         </label>
         <textarea
@@ -301,14 +304,14 @@ export function CandidateApplicationForm() {
           onChange={updateField}
           rows={5}
           placeholder="Tell us about your background, availability, target role, or salary expectation..."
-          className="w-full resize-none rounded-2xl border border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 py-3 text-sm font-medium text-[#3D405B] outline-none transition placeholder:text-[#3D405B]/45 focus:border-[#E07A5F]"
+          className="w-full resize-none rounded-xl border border-[#CBD5E1] bg-white px-4 py-3 text-sm font-semibold text-[#161925] outline-none transition placeholder:text-slate-400 focus:border-[#406E8E] focus:ring-4 focus:ring-[#CBF7ED]"
         />
       </div>
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-6 py-3 font-extrabold text-white transition hover:bg-[#cf6b52] disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49] disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "loading" ? "Submitting..." : "Join Candidate Database"}
         <Send size={18} />

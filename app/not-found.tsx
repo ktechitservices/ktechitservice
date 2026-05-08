@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import {
-  ArrowLeft,
+  ArrowRight,
   BriefcaseBusiness,
   Home,
   Search,
@@ -10,94 +10,114 @@ import {
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-[#F4F1DE] text-[#3D405B]">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-700">
       <Navbar />
 
-      <section className="relative overflow-hidden px-6 py-24 lg:px-8">
-        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#E07A5F]/20 blur-3xl" />
-        <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#1B3D2F]/15 blur-3xl" />
+      <section className="border-b border-[#E2E8F0] bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#23395B] text-white shadow-lg">
+              <Search size={36} />
+            </div>
 
-        <div className="relative mx-auto max-w-5xl text-center">
-          <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE] shadow-xl">
-            <Search size={42} />
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+              404 — Page Not Found
+            </p>
+
+            <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-black tracking-tight text-[#161925] sm:text-5xl lg:text-6xl">
+              This page is not available.
+            </h1>
+
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              The page you are looking for may have been moved, deleted, or does
+              not exist. You can return home, browse open IT jobs, or choose the
+              right KTech pathway below.
+            </p>
+
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href="/"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
+              >
+                <Home size={18} />
+                Back to Home
+              </a>
+
+              <a
+                href="/jobs"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#CBD5E1] bg-white px-6 py-3 text-sm font-bold text-[#23395B] transition hover:border-[#23395B] hover:bg-slate-50"
+              >
+                <BriefcaseBusiness size={18} />
+                View Jobs
+              </a>
+            </div>
           </div>
 
-          <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-            404 — Page not found
-          </p>
-
-          <h1 className="mx-auto mt-5 max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-            This page seems to be off the shortlist.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-            The page you are looking for may have been moved, deleted, or never
-            existed. You can return home, explore jobs, or choose the right KTech
-            pathway below.
-          </p>
-
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1B3D2F] px-7 py-3 font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
-            >
-              <Home size={18} />
-              Back to Home
-            </a>
-
-            <a
-              href="/jobs"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-7 py-3 font-extrabold text-white transition hover:bg-[#cf6b52]"
-            >
-              <BriefcaseBusiness size={18} />
-              View Jobs
-            </a>
-          </div>
-
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             <a
               href="/employers"
-              className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/75 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              className="group rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
             >
-              <BriefcaseBusiness className="text-[#E07A5F]" size={28} />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white transition group-hover:bg-[#406E8E]">
+                <BriefcaseBusiness size={26} />
+              </div>
 
-              <h2 className="mt-5 text-2xl font-black text-[#1B3D2F]">
-                Employers
+              <h2 className="text-2xl font-black tracking-tight text-[#161925]">
+                For Employers
               </h2>
 
-              <p className="mt-3 text-sm leading-7 text-[#3D405B]">
-                Submit a hiring requirement and get relevant IT talent support.
+              <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
+                Submit a hiring requirement and get relevant IT talent support
+                from KTech.
               </p>
+
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#23395B] group-hover:text-[#406E8E]">
+                Hire talent <ArrowRight size={16} />
+              </span>
             </a>
 
             <a
               href="/candidates"
-              className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/75 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              className="group rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
             >
-              <UploadCloud className="text-[#E07A5F]" size={28} />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white transition group-hover:bg-[#406E8E]">
+                <UploadCloud size={26} />
+              </div>
 
-              <h2 className="mt-5 text-2xl font-black text-[#1B3D2F]">
-                Candidates
+              <h2 className="text-2xl font-black tracking-tight text-[#161925]">
+                For Candidates
               </h2>
 
-              <p className="mt-3 text-sm leading-7 text-[#3D405B]">
-                Upload your resume or search active IT job opportunities.
+              <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
+                Search active IT jobs or upload your resume for future
+                technology opportunities.
               </p>
+
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#23395B] group-hover:text-[#406E8E]">
+                Upload resume <ArrowRight size={16} />
+              </span>
             </a>
 
             <a
               href="/services"
-              className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/75 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              className="group rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
             >
-              <ArrowLeft className="rotate-180 text-[#E07A5F]" size={28} />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white transition group-hover:bg-[#406E8E]">
+                <Search size={26} />
+              </div>
 
-              <h2 className="mt-5 text-2xl font-black text-[#1B3D2F]">
+              <h2 className="text-2xl font-black tracking-tight text-[#161925]">
                 Services
               </h2>
 
-              <p className="mt-3 text-sm leading-7 text-[#3D405B]">
-                Explore KTech’s IT staffing and services support.
+              <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
+                Explore KTech’s IT staffing, recruitment, and technology
+                services support.
               </p>
+
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#23395B] group-hover:text-[#406E8E]">
+                View services <ArrowRight size={16} />
+              </span>
             </a>
           </div>
         </div>

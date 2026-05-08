@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -17,66 +18,67 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#1B3D2F]/10 bg-[#F4F1DE]/90 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE]">
-            <Sparkles size={18} />
-          </div>
-
-          <div>
-            <p className="text-base font-extrabold leading-none text-[#1B3D2F]">
-              KTech
-            </p>
-            <p className="text-xs font-medium text-[#3D405B]/70">
-              IT Services
-            </p>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-[#E2E8F0] bg-white/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
+        <a href="/" className="flex shrink-0 items-center">
+          <Image
+            src="/images/ktech-logo.png"
+            alt="KTech IT Services"
+            width={240}
+            height={70}
+            priority
+            className="h-auto w-[118px] object-contain sm:w-[135px] lg:w-[150px]"
+          />
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-7 rounded-full bg-white/55 px-6 py-3 text-sm font-semibold text-[#3D405B] shadow-sm lg:flex">
+        <div className="hidden items-center gap-6 text-sm font-semibold text-slate-700 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="transition hover:text-[#1B3D2F]"
+              className="transition hover:text-[#23395B]"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* Desktop CTA */}
-        <a
-          href="/employers"
-          className="hidden rounded-full bg-[#1B3D2F] px-5 py-2.5 text-sm font-bold text-[#F4F1DE] shadow-sm transition hover:bg-[#163226] lg:inline-flex"
-        >
-          Hire Talent
-        </a>
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="/jobs"
+            className="rounded-xl border border-[#CBD5E1] bg-white px-5 py-2.5 text-sm font-bold text-[#23395B] transition hover:border-[#23395B] hover:bg-slate-50"
+          >
+            Find Jobs
+          </a>
 
-        {/* Mobile menu button */}
+          <a
+            href="/employers"
+            className="rounded-xl bg-[#23395B] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
+          >
+            Hire Talent
+          </a>
+        </div>
+
         <button
           type="button"
           onClick={() => setIsOpen((current) => !current)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE] lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#23395B] text-white lg:hidden"
           aria-label="Toggle navigation menu"
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
-      {/* Mobile dropdown */}
       {isOpen && (
-        <div className="border-t border-[#1B3D2F]/10 bg-[#F4F1DE] px-4 pb-5 lg:hidden">
+        <div className="border-t border-[#E2E8F0] bg-white px-4 pb-5 lg:hidden">
           <div className="mx-auto max-w-7xl">
-            <div className="mt-4 grid gap-2 rounded-[1.5rem] bg-white/70 p-3 shadow-sm">
+            <div className="mt-4 grid gap-1 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="rounded-2xl px-4 py-3 text-sm font-extrabold text-[#3D405B] transition hover:bg-[#F4F1DE] hover:text-[#1B3D2F]"
+                  className="rounded-xl px-4 py-3 text-sm font-bold text-slate-700 transition hover:bg-white hover:text-[#23395B]"
                 >
                   {link.label}
                 </a>
@@ -85,19 +87,19 @@ export function Navbar() {
 
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <a
-                href="/employers"
+                href="/jobs"
                 onClick={() => setIsOpen(false)}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#1B3D2F] px-5 py-3 text-sm font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#CBD5E1] bg-white px-5 py-3 text-sm font-bold text-[#23395B]"
               >
-                Hire IT Talent
+                Find Jobs
               </a>
 
               <a
-                href="/jobs"
+                href="/employers"
                 onClick={() => setIsOpen(false)}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#E07A5F] px-5 py-3 text-sm font-extrabold text-white transition hover:bg-[#cf6b52]"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#23395B] px-5 py-3 text-sm font-bold text-white"
               >
-                Find a Job
+                Hire Talent
               </a>
             </div>
           </div>

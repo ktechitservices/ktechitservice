@@ -1,22 +1,25 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import {
   ArrowRight,
+  BriefcaseBusiness,
   Building2,
   CheckCircle2,
+  Cloud,
   Code2,
   Database,
   Globe2,
+  Handshake,
   ShieldCheck,
-  Sparkles,
+  Target,
   Users,
 } from "lucide-react";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About KTech IT Services",
   description:
-    "Learn about KTech IT Services, a Delaware-based IT staffing and services company built for better talent matching.",
+    "Learn about KTech IT Services, a Delaware-based IT staffing and services company helping employers hire technology talent and candidates find IT opportunities.",
 };
 
 const focusAreas = [
@@ -24,121 +27,132 @@ const focusAreas = [
     icon: Users,
     title: "IT Staffing",
     description:
-      "Helping companies source technology professionals for contract, permanent, contract-to-hire, and project-based hiring needs.",
+      "Helping companies source skilled technology professionals for contract, permanent, and contract-to-hire requirements.",
   },
   {
     icon: Code2,
     title: "Technology Talent",
     description:
-      "Supporting hiring across software engineering, cloud, data, cybersecurity, DevOps, and digital delivery roles.",
+      "Supporting roles across software engineering, cloud, data, cybersecurity, DevOps, infrastructure, and digital delivery.",
   },
   {
     icon: Database,
     title: "Candidate Database",
     description:
-      "Allowing candidates to apply to jobs or upload their resume for future matching when no role fits today.",
+      "Building a searchable talent database so candidates can stay visible for current and future opportunities.",
   },
   {
     icon: ShieldCheck,
-    title: "IT Services Support",
+    title: "Structured Hiring",
     description:
-      "Supporting organisations with technology capability, staffing support, and delivery-focused talent solutions.",
+      "Creating a clear workflow for employer requirements, job postings, candidate sourcing, and shortlist delivery.",
   },
 ];
 
 const values = [
-  "Speed with quality",
-  "Technology-focused hiring",
-  "Relevant candidate matching",
+  "Relevant technology matching",
   "Clear employer communication",
   "Candidate-first experience",
+  "Structured hiring process",
   "Long-term business relationships",
+  "Professional staffing support",
 ];
 
-const trustPoints = [
+const companyFacts = [
   "Delaware-based IT services company",
-  "Employer and candidate journeys clearly separated",
-  "Client and internal job posting capability",
-  "Resume database for future opportunity matching",
-  "Specialist focus across software, cloud, data, and cybersecurity",
+  "Employer and candidate pathways",
+  "Client and internal job posting support",
+  "Resume upload and candidate database workflow",
+  "Technology-focused hiring and staffing support",
+];
+
+const serviceCoverage = [
+  "Software Engineering",
+  "Cloud & DevOps",
+  "Data & Analytics",
+  "Cybersecurity",
+  "Infrastructure Support",
+  "Business Analysis",
+  "QA & Testing",
+  "Project Delivery",
 ];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#F4F1DE] text-[#3D405B]">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-700">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24">
-        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#E07A5F]/20 blur-3xl" />
-        <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#1B3D2F]/15 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="border-b border-[#E2E8F0] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-2 text-sm font-bold text-[#23395B] shadow-sm">
               <Building2 size={16} />
               About KTech IT Services
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-              A modern IT staffing partner built for better matches.
+            <h1 className="max-w-5xl text-4xl font-black tracking-tight text-[#161925] sm:text-5xl lg:text-6xl">
+              A professional IT staffing partner built for better talent
+              matching.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              KTech IT Services connects companies with skilled technology
-              professionals while helping candidates discover roles that match
-              their skills, experience, and career direction.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              KTech connects businesses with skilled technology professionals
+              while helping candidates find suitable IT opportunities across
+              software, cloud, infrastructure, data, cybersecurity, and digital
+              delivery.
             </p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/employers"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1B3D2F] px-7 py-3 font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
               >
                 Hire IT Talent
                 <ArrowRight size={18} />
               </a>
 
               <a
-                href="/candidates"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-7 py-3 font-extrabold text-white transition hover:bg-[#cf6b52]"
+                href="/jobs"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#CBD5E1] bg-white px-6 py-3 text-sm font-bold text-[#23395B] transition hover:border-[#23395B] hover:bg-slate-50"
               >
-                Upload Resume
+                Explore Jobs
               </a>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-[#DCD9FF] blur-sm" />
+          <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-lg">
+            <div className="rounded-2xl bg-[#161925] p-7 text-white">
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8EA8C3]">
+                Company focus
+              </p>
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-[#1B3D2F]/10 bg-white p-4 shadow-xl">
-              <div className="rounded-[1.5rem] bg-[#1B3D2F] p-6 text-[#F4F1DE]">
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4F1DE] text-[#1B3D2F]">
-                    <Sparkles size={22} />
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-white">
+                Staffing, recruitment, and IT services support.
+              </h2>
+
+              <div className="mt-7 space-y-4">
+                {companyFacts.map((item) => (
+                  <div
+                    key={item}
+                    className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
+                  >
+                    <CheckCircle2
+                      className="mt-0.5 shrink-0 text-[#CBF7ED]"
+                      size={20}
+                    />
+                    <p className="text-sm font-semibold leading-6 text-slate-200">
+                      {item}
+                    </p>
                   </div>
+                ))}
+              </div>
 
-                  <div>
-                    <p className="text-sm text-[#F4F1DE]/70">Company focus</p>
-                    <h2 className="text-2xl font-black">
-                      Talent + IT Services
-                    </h2>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  {trustPoints.map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 rounded-3xl bg-[#F4F1DE]/10 p-4"
-                    >
-                      <CheckCircle2 className="text-[#E07A5F]" size={20} />
-                      <p className="text-sm font-medium text-[#F4F1DE]/85">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className="mt-6 rounded-2xl bg-[#CBF7ED] p-5 text-[#161925]">
+                <p className="text-4xl font-black">IT</p>
+                <p className="mt-1 text-xs font-black uppercase tracking-[0.14em]">
+                  Specialist staffing focus
+                </p>
               </div>
             </div>
           </div>
@@ -146,20 +160,20 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Our story
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+              Our purpose
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Built to reduce the gap between hiring speed and talent quality.
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              Reducing the gap between hiring speed and talent quality.
             </h2>
           </div>
 
-          <div className="rounded-[2rem] bg-white/75 p-8 shadow-sm">
-            <div className="space-y-6 text-lg leading-8 text-[#3D405B]">
+          <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 shadow-sm">
+            <div className="space-y-6 text-base font-medium leading-8 text-slate-600">
               <p>
                 Technology hiring is often slow, noisy, and difficult to manage.
                 Employers need skilled professionals quickly, but finding the
@@ -168,14 +182,14 @@ export default function AboutPage() {
               </p>
 
               <p>
-                KTech IT Services is designed to make that process more focused.
-                Employers share their hiring requirements with KTech, and KTech
-                reviews, posts, sources, and shortlists suitable candidates.
+                KTech is designed to make this process more focused. Employers
+                can submit hiring requirements, and KTech can review, post,
+                source, and shortlist suitable candidates for active roles.
               </p>
 
               <p>
-                Candidates can apply to active roles or upload their resume even
-                when no job matches today. This helps KTech build a useful
+                Candidates can apply to active jobs or upload their resume even
+                when no current role matches. This helps KTech build a useful
                 candidate database for future client and internal opportunities.
               </p>
             </div>
@@ -184,20 +198,21 @@ export default function AboutPage() {
       </section>
 
       {/* Focus Areas */}
-      <section className="px-6 py-20 lg:px-8">
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 max-w-4xl">
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
               What we focus on
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Recruitment and IT services under one modern platform.
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              Recruitment and IT services under one structured platform.
             </h2>
 
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
-              KTech combines employer hiring support, job posting, candidate
-              profile collection, and technology-focused talent matching.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              KTech combines employer hiring support, candidate profile
+              collection, active job posting, and technology-focused staffing
+              workflows.
             </p>
           </div>
 
@@ -206,22 +221,22 @@ export default function AboutPage() {
               const Icon = area.icon;
 
               return (
-                <div
+                <article
                   key={area.title}
-                  className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/70 p-7 shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                  className="rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
                 >
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#DDEDE6] text-[#1B3D2F]">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white">
                     <Icon size={26} />
                   </div>
 
-                  <h3 className="text-xl font-black text-[#1B3D2F]">
+                  <h3 className="text-xl font-black tracking-tight text-[#161925]">
                     {area.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-[#3D405B]">
+                  <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
                     {area.description}
                   </p>
-                </div>
+                </article>
               );
             })}
           </div>
@@ -229,66 +244,112 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
-          <div className="rounded-[2rem] bg-[#1B3D2F] p-8 text-[#F4F1DE] shadow-xl lg:col-span-2">
-            <Globe2 className="text-[#E07A5F]" size={36} />
+      <section className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-3xl bg-[#161925] p-8 text-white shadow-lg sm:p-10">
+            <Target className="text-[#CBF7ED]" size={38} />
 
-            <h2 className="mt-6 max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
-              Our mission is to make IT hiring faster, cleaner, and more
+            <h2 className="mt-6 max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl">
+              Our mission is to make IT hiring faster, clearer, and more
               relevant.
             </h2>
 
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#F4F1DE]/80">
-              KTech aims to reduce hiring friction by helping employers access
-              relevant technology professionals and helping candidates get
-              discovered for roles that match their profile.
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+              KTech helps employers access relevant technology professionals and
+              helps candidates stay visible for opportunities that match their
+              skills, experience, and career direction.
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#E07A5F] p-8 text-white shadow-xl">
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-white/75">
-              Our promise
-            </p>
+          <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 shadow-sm sm:p-10">
+            <Handshake className="text-[#406E8E]" size={38} />
 
-            <h3 className="mt-4 text-4xl font-black leading-tight">
+            <h3 className="mt-6 text-3xl font-black tracking-tight text-[#161925]">
               Better matches. Better teams.
             </h3>
 
-            <p className="mt-5 text-sm leading-7 text-white/85">
+            <p className="mt-5 text-sm font-medium leading-7 text-slate-600">
               KTech focuses on clarity, quality, and speed so employers and
               candidates both get a smoother staffing experience.
             </p>
+
+            <a
+              href="/contact"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-black text-[#23395B] transition hover:text-[#406E8E]"
+            >
+              Talk to KTech
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Role Coverage */}
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+              Technology coverage
+            </p>
+
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              Talent coverage across key IT functions.
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              KTech is built for technology-focused staffing, where role fit
+              depends on both technical skills and business context.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {serviceCoverage.map((item) => (
+              <div
+                key={item}
+                className="flex gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5"
+              >
+                <CheckCircle2
+                  className="mt-0.5 shrink-0 text-[#406E8E]"
+                  size={20}
+                />
+                <p className="text-sm font-semibold leading-6 text-slate-700">
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="px-6 py-20 lg:px-8">
+      <section className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
               Values
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
               What KTech stands for.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              KTech is built around speed, relevance, and trust. The experience
-              should feel simple for candidates and valuable for employers.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              KTech is built around relevance, trust, and professional execution
+              across employer and candidate relationships.
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {values.map((value) => (
               <div
                 key={value}
-                className="flex gap-3 rounded-3xl border border-[#1B3D2F]/10 bg-white/75 p-5 shadow-sm"
+                className="flex gap-3 rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-sm"
               >
-                <CheckCircle2 className="mt-0.5 shrink-0 text-[#E07A5F]" />
-                <p className="text-sm font-semibold leading-6 text-[#3D405B]">
+                <CheckCircle2
+                  className="mt-0.5 shrink-0 text-[#406E8E]"
+                  size={20}
+                />
+                <p className="text-sm font-semibold leading-6 text-slate-700">
                   {value}
                 </p>
               </div>
@@ -297,76 +358,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Future Team/Certifications Placeholder */}
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-[2rem] bg-white/75 p-8 shadow-sm">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-                Trust signals
-              </p>
-
-              <h2 className="mt-4 text-4xl font-black leading-tight text-[#1B3D2F] md:text-5xl">
-                Built to grow with real proof.
-              </h2>
-
-              <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-                As KTech grows, this section can display team photos,
-                certifications, client testimonials, awards, and verified trust
-                badges.
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {["Team", "Certifications", "Testimonials"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-3xl bg-[#F4F1DE] p-6 text-center"
-                >
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#1B3D2F] text-[#F4F1DE]">
-                    <Sparkles size={20} />
-                  </div>
-
-                  <p className="text-lg font-black text-[#1B3D2F]">{item}</p>
-
-                  <p className="mt-2 text-xs font-semibold leading-5 text-[#3D405B]/75">
-                    Add real assets before launch for stronger trust.
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="px-6 py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl rounded-[2rem] bg-[#1B3D2F] p-8 text-center text-[#F4F1DE] shadow-xl md:p-12">
-          <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-            Work with KTech
-          </p>
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-3xl bg-[#161925] p-8 text-center text-white shadow-lg sm:p-10 lg:p-12">
+          <Globe2 className="mx-auto text-[#CBF7ED]" size={40} />
 
-          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
+          <h2 className="mx-auto mt-6 max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl">
             Whether you are hiring or job searching, KTech helps you move
             forward.
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#F4F1DE]/80">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
             Employers can submit hiring requirements. Candidates can search jobs
             or upload resumes to join KTech’s talent database.
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="/employers"
-              className="rounded-full bg-[#F4F1DE] px-7 py-3 font-extrabold text-[#1B3D2F] transition hover:bg-white"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#CBF7ED] px-6 py-3 text-sm font-black text-[#161925] transition hover:bg-white"
             >
               Hire IT Talent
             </a>
 
             <a
               href="/jobs"
-              className="rounded-full bg-[#E07A5F] px-7 py-3 font-extrabold text-white transition hover:bg-[#cf6b52]"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/20 px-6 py-3 text-sm font-black text-white transition hover:bg-white/10"
             >
               View Jobs
             </a>

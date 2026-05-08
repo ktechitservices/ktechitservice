@@ -1,108 +1,154 @@
-import { Mail, MapPin, Sparkles } from "lucide-react";
-import { LinkedinIcon } from "@/components/icons/il-linkedin";
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  Mail,
+  MapPin,
+  UploadCloud,
+} from "lucide-react";
+import Image from "next/image";
+
+const footerLinks = {
+  company: [
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Industries", href: "/industries" },
+    { label: "Contact", href: "/contact" },
+  ],
+  pathways: [
+    { label: "For Employers", href: "/employers" },
+    { label: "For Candidates", href: "/candidates" },
+    { label: "Open Jobs", href: "/jobs" },
+    { label: "Upload Resume", href: "/candidates" },
+  ],
+  legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Use", href: "/terms" },
+  ],
+};
 
 export function Footer() {
   return (
-    <footer className="bg-[#F4F1DE] px-6 pb-8 pt-12 lg:px-8">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#1B3D2F] p-8 text-[#F4F1DE] md:p-10">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+    <footer className="bg-[#161925] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
-            <a href="/" className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F4F1DE] text-[#1B3D2F]">
-                <Sparkles size={20} />
-              </div>
-
-              <div>
-                <p className="text-lg font-black leading-none">KTech</p>
-                <p className="text-xs font-medium text-[#F4F1DE]/70">
-                  IT Services
-                </p>
-              </div>
+            <a href="/" className="inline-flex items-center">
+              <Image
+                src="/images/ktech-logo.png"
+                alt="KTech IT Services"
+                width={260}
+                height={75}
+                className="h-auto w-[155px] rounded-2xl bg-white px-4 py-3 object-contain sm:w-[175px]"
+              />
             </a>
 
-            <p className="mt-5 max-w-sm text-sm leading-7 text-[#F4F1DE]/75">
-              A Delaware-based IT staffing and services partner helping
-              companies hire skilled technology talent and candidates find
-              better opportunities.
+            <p className="mt-5 max-w-md text-sm font-medium leading-7 text-slate-300">
+              KTech connects employers with skilled IT talent and helps
+              candidates find technology roles across software, cloud, data,
+              cybersecurity, infrastructure, and digital delivery.
             </p>
+
+            <div className="mt-6 space-y-3 text-sm font-semibold text-slate-300">
+              <a
+                href="mailto:hello@ktechitservices.com"
+                className="flex items-center gap-3 hover:text-[#CBF7ED]"
+              >
+                <Mail size={17} className="text-[#CBF7ED]" />
+                hello@ktechitservices.com
+              </a>
+
+              <div className="flex items-center gap-3">
+                <MapPin size={17} className="text-[#CBF7ED]" />
+                Delaware, United States
+              </div>
+            </div>
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.18em] text-[#E07A5F]">
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#8EA8C3]">
               Company
             </h3>
 
-            <div className="mt-5 space-y-3 text-sm text-[#F4F1DE]/75">
-              <a href="/about" className="block hover:text-white">
-                About
-              </a>
-              <a href="/contact" className="block hover:text-white">
-                Contact
-              </a>
-              <a href="/#services" className="block hover:text-white">
-                Services
-              </a>
-              <a href="/jobs" className="block hover:text-white">
-                Jobs
-              </a>
+            <div className="mt-5 space-y-3">
+              {footerLinks.company.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm font-semibold text-slate-300 hover:text-[#CBF7ED]"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.18em] text-[#E07A5F]">
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#8EA8C3]">
               Pathways
             </h3>
 
-            <div className="mt-5 space-y-3 text-sm text-[#F4F1DE]/75">
-              <a href="/employers" className="block hover:text-white">
-                For Employers
+            {footerLinks.pathways.map((link) => (
+              <a
+                key={`${link.label}-${link.href}`}
+                href={link.href}
+                className="block text-sm font-semibold text-slate-300 hover:text-[#CBF7ED]"
+              >
+                {link.label}
               </a>
-              <a href="/candidates" className="block hover:text-white">
-                For Candidates
-              </a>
-              <a href="/contact" className="block hover:text-white">
-                Get in Touch
-              </a>
-            </div>
+            ))}
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.18em] text-[#E07A5F]">
-              Contact
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#8EA8C3]">
+              Start here
             </h3>
 
-            <div className="mt-5 space-y-4 text-sm text-[#F4F1DE]/75">
-              <div className="flex gap-3">
-                <Mail className="mt-0.5 shrink-0 text-[#E07A5F]" size={17} />
-                <span>hello@ktechitservices.com</span>
-              </div>
-
-              <div className="flex gap-3">
-                <MapPin className="mt-0.5 shrink-0 text-[#E07A5F]" size={17} />
-                <span>Delaware, United States</span>
-              </div>
-
-              <a href="#" className="flex gap-3 hover:text-white">
-                <LinkedinIcon
-                  className="mt-0.5 shrink-0 text-[#E07A5F]"
-                  size={17}
-                />
-                <span>LinkedIn</span>
+            <div className="mt-5 space-y-3">
+              <a
+                href="/employers"
+                className="flex items-center justify-between rounded-xl bg-[#23395B] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#406E8E]"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <BriefcaseBusiness size={16} />
+                  Hire Talent
+                </span>
+                <ArrowRight size={15} />
               </a>
+
+              <a
+                href="/candidates"
+                className="flex items-center justify-between rounded-xl bg-[#CBF7ED] px-4 py-3 text-sm font-bold text-[#161925] transition hover:bg-white"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <UploadCloud size={16} />
+                  Upload Resume
+                </span>
+                <ArrowRight size={15} />
+              </a>
+            </div>
+
+            <div className="mt-6 space-y-3">
+              {footerLinks.legal.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm font-semibold text-slate-400 hover:text-[#CBF7ED]"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-[#F4F1DE]/15 pt-6 text-xs text-[#F4F1DE]/60 md:flex-row">
-          <p>© 2026 KTech IT Services. All rights reserved.</p>
+        <div className="mt-12 border-t border-white/10 pt-6">
+          <div className="flex flex-col justify-between gap-4 text-sm font-semibold text-slate-400 md:flex-row md:items-center">
+            <p>
+              © {new Date().getFullYear()} KTech IT Services. All rights
+              reserved.
+            </p>
 
-          <div className="flex gap-5">
-            <a href="/privacy" className="hover:text-white">
-              Privacy Policy
-            </a>
-            <a href="/terms" className="hover:text-white">
-              Terms of Use
-            </a>
+            <p>IT staffing, recruitment, and technology services.</p>
           </div>
         </div>
       </div>

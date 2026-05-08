@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CandidateApplicationForm } from "@/components/forms/CandidateApplicationForm";
@@ -5,16 +6,12 @@ import {
   ArrowRight,
   BriefcaseBusiness,
   CheckCircle2,
-  Cloud,
-  Code2,
   Database,
   FileText,
   Search,
-  ShieldCheck,
   UploadCloud,
   Users,
 } from "lucide-react";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Find IT Jobs",
@@ -22,104 +19,81 @@ export const metadata: Metadata = {
     "Search active IT roles or upload your resume to join KTech’s candidate database for future opportunities.",
 };
 
-const specialisations = [
-  {
-    icon: Code2,
-    title: "Software Engineering",
-    skills: "React, Node.js, Java, .NET, QA",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps",
-    skills: "AWS, Azure, GCP, Terraform, CI/CD",
-  },
-  {
-    icon: Database,
-    title: "Data & Analytics",
-    skills: "SQL, Python, Power BI, Data Engineering",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Cybersecurity",
-    skills: "Security, Risk, Compliance, Monitoring",
-  },
+const candidateBenefits = [
+  "Apply to active IT roles posted by KTech",
+  "Upload your resume even if no current job matches",
+  "Stay visible for future client and internal opportunities",
+  "Share your preferred role, skills, location, and work mode",
 ];
 
-const benefits = [
-  "Search active IT roles",
-  "Upload your resume even if no job matches today",
-  "Join KTech’s candidate database",
-  "Get considered for client and internal roles",
-  "Remote, hybrid, and on-site role options",
-  "Software, cloud, data, and cybersecurity opportunities",
-];
-
-const steps = [
+const pathways = [
   {
     icon: Search,
-    title: "Search Jobs",
+    title: "Search Active Jobs",
     description:
-      "Browse active IT opportunities posted by KTech for client and internal hiring needs.",
+      "Browse software, cloud, data, cybersecurity, infrastructure, and IT support roles.",
   },
   {
     icon: UploadCloud,
-    title: "Upload Profile",
+    title: "Upload Resume",
     description:
-      "Share your skills, experience, preferred role, and resume with KTech.",
+      "Submit your resume to join KTech’s candidate database for future matching.",
   },
   {
-    icon: Users,
-    title: "Get Matched",
+    icon: Database,
+    title: "Stay Discoverable",
     description:
-      "KTech reviews your profile and matches you with suitable employer requirements.",
+      "KTech can review your profile when suitable client or internal roles become available.",
   },
-  {
-    icon: BriefcaseBusiness,
-    title: "Interview & Grow",
-    description:
-      "Move forward with relevant opportunities and build your next career step.",
-  },
+];
+
+const roleAreas = [
+  "Software Engineering",
+  "Cloud & DevOps",
+  "Data & Analytics",
+  "Cybersecurity",
+  "Infrastructure Support",
+  "Business Analysis",
+  "QA & Testing",
+  "IT Project Delivery",
 ];
 
 export default function CandidatesPage() {
   return (
-    <main className="min-h-screen bg-[#F4F1DE] text-[#3D405B]">
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-700">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24">
-        <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#E07A5F]/20 blur-3xl" />
-        <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#1B3D2F]/15 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="border-b border-[#E2E8F0] bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#1B3D2F]/10 bg-white/70 px-4 py-2 text-sm font-bold text-[#1B3D2F] shadow-sm">
-              <UploadCloud size={16} />
-              Candidate talent network
+            <div className="mb-6 inline-flex items-center gap-2 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-2 text-sm font-bold text-[#23395B] shadow-sm">
+              <BriefcaseBusiness size={16} />
+              Candidate opportunities
             </div>
 
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#1B3D2F] md:text-7xl">
-              IT roles that match your skills.
+            <h1 className="max-w-5xl text-4xl font-black tracking-tight text-[#161925] sm:text-5xl lg:text-6xl">
+              Find your next opportunity in IT.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#3D405B]">
-              Search active roles, apply to suitable jobs, or upload your resume
-              so KTech can keep you in its candidate database for future
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              Search active technology roles or upload your resume to join
+              KTech’s candidate database for future client and internal
               opportunities.
             </p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/jobs"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#1B3D2F] px-7 py-3 font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#23395B] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1B2D49]"
               >
-                Search IT Jobs
-                <Search size={18} />
+                Search Jobs
+                <ArrowRight size={18} />
               </a>
 
               <a
-                href="#candidate-form"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#E07A5F] px-7 py-3 font-extrabold text-white transition hover:bg-[#cf6b52]"
+                href="#resume-upload"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#CBD5E1] bg-white px-6 py-3 text-sm font-bold text-[#23395B] transition hover:border-[#23395B] hover:bg-slate-50"
               >
                 Upload Resume
                 <UploadCloud size={18} />
@@ -127,167 +101,119 @@ export default function CandidatesPage() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-[#DCD9FF] blur-sm" />
+          <div className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-lg">
+            <div className="rounded-2xl bg-[#161925] p-7 text-white">
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-[#8EA8C3]">
+                Candidate workflow
+              </p>
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-[#1B3D2F]/10 bg-white p-4 shadow-xl">
-              <div className="rounded-[1.5rem] bg-[#1B3D2F] p-6 text-[#F4F1DE]">
-                <p className="text-sm font-medium text-[#F4F1DE]/75">
-                  Candidate profile hub
-                </p>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-white">
+                Apply now or stay visible for future roles.
+              </h2>
 
-                <h2 className="mt-2 text-3xl font-black leading-tight">
-                  No right job today?
-                  <br />
-                  Upload anyway.
-                </h2>
-
-                <div className="mt-6 space-y-4">
-                  {[
-                    "Apply to active roles",
-                    "Upload resume for future matching",
-                    "Join KTech’s candidate database",
-                    "Get contacted for relevant IT jobs",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 rounded-3xl bg-[#F4F1DE]/10 p-4"
-                    >
-                      <CheckCircle2 className="text-[#E07A5F]" size={20} />
-                      <p className="text-sm font-medium text-[#F4F1DE]/85">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 rounded-3xl bg-[#E07A5F] p-5">
-                  <div className="flex items-center gap-3">
-                    <FileText className="text-white" />
-                    <p className="text-sm font-semibold text-white">
-                      Resume database connection comes in the backend stage.
+              <div className="mt-7 space-y-4">
+                {candidateBenefits.map((item) => (
+                  <div
+                    key={item}
+                    className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
+                  >
+                    <CheckCircle2
+                      className="mt-0.5 shrink-0 text-[#CBF7ED]"
+                      size={20}
+                    />
+                    <p className="text-sm font-semibold leading-6 text-slate-200">
+                      {item}
                     </p>
                   </div>
-                </div>
+                ))}
+              </div>
+
+              <div className="mt-6 rounded-2xl bg-[#CBF7ED] p-5 text-[#161925]">
+                <p className="text-4xl font-black">IT</p>
+                <p className="mt-1 text-xs font-black uppercase tracking-[0.14em]">
+                  Specialist career focus
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Search Widget */}
-      <section className="px-6 pb-16 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#1B3D2F]/10 bg-white/80 p-4 shadow-xl">
-          <div className="grid gap-4 md:grid-cols-[1fr_1fr_0.7fr_auto]">
-            <div className="rounded-2xl bg-[#F4F1DE] px-5 py-4">
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#E07A5F]">
-                Keyword
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#1B3D2F]">
-                React, Cloud, Data, DevOps...
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-[#F4F1DE] px-5 py-4">
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#E07A5F]">
-                Location
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#1B3D2F]">
-                Remote, Hybrid, United States
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-[#F4F1DE] px-5 py-4">
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#E07A5F]">
-                Type
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#1B3D2F]">
-                Full-time / Contract
-              </p>
-            </div>
-
-            <a
-              href="/jobs"
-              className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-[#1B3D2F] px-6 font-extrabold text-[#F4F1DE] transition hover:bg-[#163226]"
-            >
-              Search
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Specialisations */}
-      <section className="px-6 py-20 lg:px-8">
+      {/* Pathways */}
+      <section className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-3xl">
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Tech specialisations
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+              Candidate pathways
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Roles across the technology stack.
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              More than a single job application.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              KTech supports candidates across software, cloud, data,
-              cybersecurity, DevOps, and digital delivery roles.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              KTech supports candidates through active job applications and
+              future opportunity matching through its candidate database.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-4">
-            {specialisations.map((item) => {
-              const Icon = item.icon;
+          <div className="grid gap-6 md:grid-cols-3">
+            {pathways.map((pathway) => {
+              const Icon = pathway.icon;
 
               return (
-                <div
-                  key={item.title}
-                  className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/70 p-7 shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                <article
+                  key={pathway.title}
+                  className="rounded-3xl border border-[#E2E8F0] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:shadow-lg"
                 >
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#DDEDE6] text-[#1B3D2F]">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white">
                     <Icon size={26} />
                   </div>
 
-                  <h3 className="text-xl font-black text-[#1B3D2F]">
-                    {item.title}
+                  <h3 className="text-xl font-black tracking-tight text-[#161925]">
+                    {pathway.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-[#3D405B]">
-                    {item.skills}
+                  <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
+                    {pathway.description}
                   </p>
-                </div>
+                </article>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      {/* Role Areas */}
+      <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Why join KTech?
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
+              IT role coverage
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Get discovered for relevant IT opportunities.
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              Opportunities across the technology stack.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              KTech helps candidates become visible for technology roles that
-              match their skills, experience, work preference, and career goals.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              KTech focuses on technology roles where skills, delivery context,
+              and business fit matter.
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {benefits.map((benefit) => (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {roleAreas.map((role) => (
               <div
-                key={benefit}
-                className="flex gap-3 rounded-3xl border border-[#1B3D2F]/10 bg-white/75 p-5 shadow-sm"
+                key={role}
+                className="flex gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5"
               >
-                <CheckCircle2 className="mt-0.5 shrink-0 text-[#E07A5F]" />
-                <p className="text-sm font-semibold leading-6 text-[#3D405B]">
-                  {benefit}
+                <CheckCircle2
+                  className="mt-0.5 shrink-0 text-[#406E8E]"
+                  size={20}
+                />
+                <p className="text-sm font-semibold leading-6 text-slate-700">
+                  {role}
                 </p>
               </div>
             ))}
@@ -295,85 +221,45 @@ export default function CandidatesPage() {
         </div>
       </section>
 
-      {/* Journey */}
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
-              Candidate journey
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              From resume to opportunity.
-            </h2>
-
-            <p className="mx-auto mt-5 text-lg leading-8 text-[#3D405B]">
-              KTech makes the candidate journey simple, structured, and focused
-              on matching you with relevant IT roles.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-4">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-
-              return (
-                <div
-                  key={step.title}
-                  className="rounded-[2rem] border border-[#1B3D2F]/10 bg-white/70 p-7 text-center shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
-                >
-                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#DDEDE6] text-[#1B3D2F]">
-                    <Icon size={28} />
-                  </div>
-
-                  <div className="mx-auto mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#E07A5F] text-sm font-black text-white">
-                    {index + 1}
-                  </div>
-
-                  <h3 className="text-2xl font-black text-[#1B3D2F]">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-7 text-[#3D405B]">
-                    {step.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Form */}
-      <section id="candidate-form" className="px-6 py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+      {/* Resume Upload Form */}
+      <section
+        id="resume-upload"
+        className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-8"
+      >
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
               Join the database
             </p>
 
-            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
-              Upload once. Stay visible for future roles.
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
+              Upload your resume for future IT opportunities.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-[#3D405B]">
-              Fill out your profile and upload your resume. For now, the form
-              opens an email draft. Later, this will connect to Supabase Storage
-              and the KTech candidate database.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              If there is no matching role today, your profile can still help
+              KTech identify you for future client or internal opportunities.
             </p>
 
-            <div className="mt-8 rounded-[2rem] bg-[#1B3D2F] p-6 text-[#F4F1DE] shadow-xl">
-              <h3 className="text-2xl font-black">What happens next?</h3>
+            <div className="mt-8 rounded-3xl bg-[#161925] p-7 text-white shadow-lg">
+              <FileText className="text-[#CBF7ED]" size={34} />
+
+              <h3 className="mt-5 text-2xl font-black text-white">
+                What happens after you submit?
+              </h3>
 
               <div className="mt-5 space-y-4">
                 {[
-                  "KTech reviews your candidate profile.",
-                  "Your resume is added to the talent database.",
-                  "You are matched with relevant active or future roles.",
+                  "Your profile is stored in KTech’s candidate database.",
+                  "KTech can review your skills for relevant opportunities.",
+                  "Your resume can support current or future role matching.",
                 ].map((item) => (
                   <div key={item} className="flex gap-3">
-                    <CheckCircle2 className="mt-0.5 shrink-0 text-[#E07A5F]" />
-                    <p className="text-sm leading-6 text-[#F4F1DE]/85">
+                    <CheckCircle2
+                      className="mt-0.5 shrink-0 text-[#CBF7ED]"
+                      size={20}
+                    />
+                    <p className="text-sm font-semibold leading-6 text-slate-300">
                       {item}
                     </p>
                   </div>

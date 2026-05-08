@@ -1,14 +1,11 @@
-"use client";
-
-import { motion } from "motion/react";
 import {
+  ArrowRight,
+  BriefcaseBusiness,
+  Cloud,
   Code2,
   Database,
-  Layers3,
   ShieldCheck,
-  Cloud,
   Users,
-  ArrowRight,
 } from "lucide-react";
 
 const services = [
@@ -22,7 +19,7 @@ const services = [
     icon: Code2,
     title: "Software Development Talent",
     description:
-      "Connect with frontend, backend, full-stack, mobile, and DevOps professionals who can support modern product delivery.",
+      "Connect with frontend, backend, full-stack, mobile, QA, and DevOps professionals for modern product delivery.",
   },
   {
     icon: Cloud,
@@ -32,79 +29,73 @@ const services = [
   },
   {
     icon: Database,
-    title: "Data & Analytics",
+    title: "Candidate Database",
     description:
-      "Hire data analysts, BI developers, data engineers, and reporting specialists for insight-driven teams.",
+      "Build and search a growing candidate database for current and future technology hiring requirements.",
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "Client & Internal Job Posting",
+    description:
+      "Post client roles and internal KTech openings through a structured careers and admin workflow.",
   },
   {
     icon: ShieldCheck,
-    title: "Cybersecurity Support",
+    title: "IT Services Support",
     description:
-      "Access security-focused professionals for compliance, risk, monitoring, governance, and secure technology operations.",
-  },
-  {
-    icon: Layers3,
-    title: "Project-Based Teams",
-    description:
-      "Build flexible technology teams for transformation projects, product builds, migrations, and digital delivery.",
+      "Support businesses with technical capability, project-based talent, and IT service delivery resources.",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative bg-[#F4F1DE] px-6 py-24 lg:px-8">
-      <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E07A5F]/10 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl">
-        <div className="mb-14 max-w-4xl">
-          <p className="text-sm font-extrabold uppercase tracking-[0.25em] text-[#E07A5F]">
+    <section id="services" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 max-w-3xl">
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-[#406E8E]">
             What we do
           </p>
 
-          <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-[#1B3D2F] md:text-6xl">
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#161925] sm:text-5xl">
             IT services and recruitment built for growing technology teams.
           </h2>
 
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-[#3D405B]">
+          <p className="mt-5 text-lg leading-8 text-slate-600">
             KTech combines IT staffing, candidate database management, and
-            technology delivery support to help businesses hire and scale
-            faster.
+            technology delivery support to help businesses hire and scale faster.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
 
             return (
-              <motion.div
+              <article
                 key={service.title}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="group rounded-[2rem] border border-[#1B3D2F]/10 bg-white/65 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                className="group rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition hover:-translate-y-1 hover:border-[#8EA8C3] hover:bg-white hover:shadow-lg"
               >
-                <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#DDEDE6] text-[#1B3D2F] transition group-hover:bg-[#1B3D2F] group-hover:text-[#F4F1DE]">
-                  <Icon size={28} />
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#23395B] text-white transition group-hover:bg-[#406E8E]">
+                  <Icon size={26} />
                 </div>
 
-                <h3 className="text-2xl font-black tracking-tight text-[#1B3D2F]">
+                <h3 className="text-xl font-black tracking-tight text-[#161925]">
                   {service.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#3D405B]">
+                <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
                   {service.description}
                 </p>
 
+                <div className="mt-6 h-px w-full bg-[#E2E8F0]" />
+
                 <a
-                  href="/employers"
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-[#E07A5F]"
+                  href="/services"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[#23395B] transition group-hover:text-[#406E8E]"
                 >
-                  Learn more
-                  <ArrowRight size={16} />
+                  Learn more <ArrowRight size={16} />
                 </a>
-              </motion.div>
+              </article>
             );
           })}
         </div>
