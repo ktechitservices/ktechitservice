@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -193,4 +194,21 @@
 
 .font-heading {
   font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+.leaflet-container {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  background: #23395b;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 16px;
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px;
+}
+
+.leaflet-control-attribution {
+  display: none;
 }

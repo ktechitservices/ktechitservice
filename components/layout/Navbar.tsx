@@ -24,10 +24,10 @@ export function Navbar() {
           <Image
             src="/images/ktech-logo.png"
             alt="KTech IT Services"
-            width={240}
-            height={70}
+            width={987}
+            height={253}
             priority
-            className="h-auto w-[118px] object-contain sm:w-[135px] lg:w-[150px]"
+            className="block h-auto w-[165px] object-contain sm:w-[175px] lg:w-[190px]"
           />
         </a>
 

@@ -34,7 +34,7 @@ export function Footer() {
           <div>
             <a href="/" className="inline-flex items-center">
               <Image
-                src="/images/ktech-logo.png"
+                src="/images/ktech-logo-footer.png"
                 alt="KTech IT Services"
                 width={260}
                 height={75}

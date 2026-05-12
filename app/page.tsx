@@ -8,6 +8,8 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { FeaturedJobs } from "@/components/sections/FeaturedJobs";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { AITalentEngine } from "@/components/sections/AITalentEngine";
+import { GlobalLeafletMapSection } from "@/components/sections/GlobalLeafletMapSection";
 
 export const metadata: Metadata = {
   title: "KTech IT Services",
@@ -21,6 +23,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProofBar />
+      <AITalentEngine />
+      <GlobalLeafletMapSection  />
       <AudienceToggle />
       <ServicesSection />
       <FeaturedJobs />
